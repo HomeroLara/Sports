@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:BaseView 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:Sports.Core.ViewModels"
+    xmlns:views="clr-namespace:Sports.Core.Views"
+    Shell.PresentationMode="ModalAnimated"
+    xmlns:viewModels="clr-namespace:Sports.Core.ViewModels"
+    viewModels:ViewModelLocator.AutoWireViewModel="True"
+    x:Class="Sports.Core.Views.LoginView">
+
+    <ContentPage.BindingContext>
+        <viewModels:LoginViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        
+        <StackLayout>
+            <Label Text="Welcome to Xamarin.Forms!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</views:BaseView>

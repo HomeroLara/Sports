@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:BaseView  
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:Sports.Core.Views"
+    Shell.NavBarIsVisible="False"
+    xmlns:viewModels="clr-namespace:Sports.Core.ViewModels"
+    viewModels:ViewModelLocator.AutoWireAndInitializeViewModel="True"
+    x:Class="Sports.Core.Views.LoadingView">
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <ActivityIndicator Color="Red"
+                               IsRunning="True"
+                               IsVisible="True" />
+            <Label Text="Loading ..." />
+        </StackLayout>
+    </ContentPage.Content>
+    
+</views:BaseView>
