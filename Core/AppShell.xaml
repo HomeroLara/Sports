@@ -68,16 +68,20 @@
         </ResourceDictionary>
     </Shell.Resources>
 
+    
     <ShellItem 
         Route="loading">
         <ShellContent 
             ContentTemplate="{ DataTemplate views:LoadingView}" />
     </ShellItem>
-
-    <ShellContent 
+    <ShellContent
         Route="login"
-        ContentTemplate="{ DataTemplate views:LoginView}" />
+        ContentTemplate="{ DataTemplate views:LoginView }">
 
+    </ShellContent>
+        
+        
+    
     <FlyoutItem
         Route="main"
         FlyoutDisplayOptions="AsMultipleItems"

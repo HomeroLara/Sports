@@ -82,7 +82,6 @@ namespace Sports.Core.ViewModels
         {
             return Task.CompletedTask;
         }
-
         // You may also wish to implement any of the following...
         //Task BeforeAppearing(); // Called before a viewmodel appears, when navigating either forwards or backwards
         //Task AfterAppearing(); // Called after a viewmodel appears, when navigating either forwards or backwards

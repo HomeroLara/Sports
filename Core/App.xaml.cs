@@ -3,6 +3,7 @@ using Sports.Core.Views;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Sports.Core.ViewModels;
 
 namespace Sports.Core
 {
@@ -12,12 +13,7 @@ namespace Sports.Core
         public App()
         {
             InitializeComponent();
-
-            DependencyService.Register<IViewLocator, ViewLocator>();
-            DependencyService.Register<ISettingsService, SettingsService>();
-            DependencyService.Register<INavigationService, NavigationService>();
-
-            var nav = new NavigationService(new ViewLocator(), new SettingsService());
+            var nav = new NavigationService(new SettingsService());
 
             MainPage = new AppShell(nav);
         }

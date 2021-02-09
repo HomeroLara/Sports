@@ -4,20 +4,25 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:vm="clr-namespace:Sports.Core.ViewModels"
     xmlns:views="clr-namespace:Sports.Core.Views"
+    Shell.NavBarIsVisible="True"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.TabBarIsVisible="False"
     Shell.PresentationMode="ModalAnimated"
     xmlns:viewModels="clr-namespace:Sports.Core.ViewModels"
     viewModels:ViewModelLocator.AutoWireViewModel="True"
     x:Class="Sports.Core.Views.LoginView">
 
-    <ContentPage.BindingContext>
-        <viewModels:LoginViewModel/>
-    </ContentPage.BindingContext>
     <ContentPage.Content>
         
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout
+            Orientation="Vertical"
+            VerticalOptions="CenterAndExpand"
+            HorizontalOptions="CenterAndExpand">
+            <Button
+                WidthRequest="200"
+                HeightRequest="50"
+                Command="{ Binding LoginCommand }"
+                Text="Log Me In!"/>
         </StackLayout>
     </ContentPage.Content>
 </views:BaseView>

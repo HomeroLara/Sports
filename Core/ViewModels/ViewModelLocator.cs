@@ -58,11 +58,12 @@ namespace Sports.Core.ViewModels
         {
             _container = new TinyIoCContainer();
 
-            // View models - by default, TinyIoC will register concrete classes as multi-instance.
+            //// View models - by default, TinyIoC will register concrete classes as multi-instance.
             _container.Register<HomeViewModel>();
+            _container.Register<LoginViewModel>();
+            _container.Register<LoadingViewModel>();
 
-            // Services - by default, TinyIoC will register interface registrations as singletons.
-            _container.Register<IViewLocator, ViewLocator>();
+            //// Services - by default, TinyIoC will register interface registrations as singletons.
             _container.Register<INavigationParameters, NavigationParameters>();
             _container.Register<INavigationService, NavigationService>();
             _container.Register<ISettingsService, SettingsService>();

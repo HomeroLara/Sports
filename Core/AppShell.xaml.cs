@@ -16,15 +16,14 @@ namespace Sports.Core
             _navigationService = navigationService;
             InitializeComponent();
 
-            var homeRoute = nameof(HomeView);
-            Routing.RegisterRoute(nameof(LoginView), typeof(LoginView));
+            Routing.RegisterRoute("main/login", typeof(LoginView));
             Routing.RegisterRoute(nameof(RegistrationView), typeof(RegistrationView));
             BindingContext = this;
         }
 
         private async void OnMenuItemClicked(object sender, EventArgs e)
         {
-            await _navigationService.NavigateTo<LoginViewModel>(null);
+            await _navigationService.NavigateTo("//login", null);
         }
     }
 }

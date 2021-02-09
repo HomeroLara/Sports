@@ -5,44 +5,36 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using AsyncAwaitBestPractices;
+using AsyncAwaitBestPractices.MVVM;
 
 namespace Sports.Core.ViewModels
 {
-    [QueryProperty("First", "first")]
-    [QueryProperty("Last", "last")]
     public class LoginViewModel : ViewModelBase
     {
         #region PRIVATE MEMBERS
+        private readonly INavigationService _navigationService;
         #endregion
 
-        #region PUBLIC MEMBERS        
-        private string _first;
-        public string First
-        {
-            set
-            {
-                _first = Uri.UnescapeDataString(value);
-            }
-        }
-
+        #region PUBLIC MEMBERS
         #endregion
 
         #region COMMANDS
-        public Command LoginCommand { get; }
+        public AsyncCommand LoginCommand => new AsyncCommand(async() => await Login());
         #endregion
 
         #region CONSTRUCTORS
-        public LoginViewModel()
+        public LoginViewModel(INavigationService navigationService)
         {
-            LoginCommand = new Command(OnLoginClicked);
+            _navigationService = navigationService;
         }
         #endregion
 
         #region METHODS      
-        private async void OnLoginClicked(object obj)
+        private async Task Login()
         {
             // Prefixing with `//` switches to a different navigation stack instead of pushing to the active one
-           // await Shell.Current.GoToAsync($"//{nameof(AboutPage)}");
+            await _navigationService.NavigateTo("//home");
         }
 
         public override Task ScalfoldViewModel(INavigationParameters parameters = null)

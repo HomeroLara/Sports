@@ -29,14 +29,8 @@ namespace Sports.Core.ViewModels
         #region OVERRIDES
         public override async Task ScalfoldViewModel(INavigationParameters parameters = null)
         {
-            var navigationParameters = new NavigationParameters();
-            navigationParameters.Add("first", "Homero"); 
-            navigationParameters.Add("last", "Lara");
-            //await Task.Delay(3000);
-
-            //await _navigationService.NavigateToUri("//main", navigationParameters);
-
-            await _navigationService.InitializeAsync(navigationParameters);
+            await Task.Delay(3000);
+            await _navigationService.InitializeAsync();
         }
         #endregion
     }
