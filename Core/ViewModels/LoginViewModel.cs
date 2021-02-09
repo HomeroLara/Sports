@@ -33,7 +33,6 @@ namespace Sports.Core.ViewModels
         #region METHODS      
         private async Task Login()
         {
-            // Prefixing with `//` switches to a different navigation stack instead of pushing to the active one
             await _navigationService.NavigateTo("//home");
         }
 
