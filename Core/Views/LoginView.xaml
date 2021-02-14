@@ -18,11 +18,16 @@
             Orientation="Vertical"
             VerticalOptions="CenterAndExpand"
             HorizontalOptions="CenterAndExpand">
+            
             <Button
-                WidthRequest="200"
-                HeightRequest="50"
-                Command="{ Binding LoginCommand }"
-                Text="Log Me In!"/>
+				x:Name="btnLogin"
+				Style="{ StaticResource PrimaryActionButtonStyle }"
+				VerticalOptions="End"
+				Text="Log In!"
+				Command="{Binding LoginCommand}"
+				WidthRequest="200"
+				HorizontalOptions="Fill"/>
+            
         </StackLayout>
     </ContentPage.Content>
 </views:BaseView>

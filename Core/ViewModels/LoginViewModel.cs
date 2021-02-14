@@ -1,11 +1,6 @@
 ﻿
 using Sports.Core.Services;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
-using Xamarin.Forms;
-using AsyncAwaitBestPractices;
 using AsyncAwaitBestPractices.MVVM;
 
 namespace Sports.Core.ViewModels
@@ -20,7 +15,7 @@ namespace Sports.Core.ViewModels
         #endregion
 
         #region COMMANDS
-        public AsyncCommand LoginCommand => new AsyncCommand(async() => await Login());
+        public AsyncCommand LoginCommand => new AsyncCommand(async() => await Login(), (_) => !IsBusy);
         #endregion
 
         #region CONSTRUCTORS

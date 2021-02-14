@@ -1,0 +1,332 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ResourceDictionary
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Sports.Core.LiteTheme">
+
+    
+    
+    <x:Double
+		x:Key="BaseButtonHeight">45</x:Double>
+    <x:Int32
+		x:Key="BaseButtonCornerRadius">20</x:Int32>
+    <x:Double
+		x:Key="BaseButtonBorderWith">0</x:Double>
+    
+    <Color
+		x:Key="BaseButtonBorderColor">Transparent</Color>
+    
+    <!-- Theme Colors -->
+    <Color
+		x:Key="AccentColor">#FF8194BA</Color>
+    <Color
+		x:Key="BaseTextColor">#292939</Color>
+    <Color
+        x:Key="BaseTabIconTextColor">#FFFFFF</Color>
+    <Color
+		x:Key="ListViewSelectedItemBackgroundColor">#11FFFFFF</Color>
+    <Color
+		x:Key="SplashBackgroundColor">#37374B</Color>
+    <Color
+        x:Key="PrimaryColor">#32394C</Color>
+    <Color
+        x:Key="GameCardBackgroundColor">#252A37</Color>
+
+    <Color
+		x:Key="BrandBlockTextColor">#FFFFFF</Color>
+    <Color
+		x:Key="BrandBlockBackgroundColor">Transparent</Color>
+
+    <!-- By Default same color as AccentColor -->
+    <Color
+		x:Key="NavigationBarStartBackgroundColor">#292939</Color>
+    <Color
+		x:Key="NavigationBarEndBackgroundColor">#45455C</Color>
+    <Color
+		x:Key="NavigationBarTextColor">#FFFFFF</Color>
+    
+    <Color
+		x:Key="MainMenuOverlayBackgroundColor">#22F1F3F5</Color>
+    
+    <!--MainMenu color resources -->
+    <Color
+		x:Key="SecondaryPageBackgroundColor">#FFFFFF</Color>
+    <Color
+		x:Key="SecondaryPageTextColor">#666666</Color>
+
+    <!--LABEL-->
+    <Color
+        x:Key="lblHeaderTextColor">#45455C</Color>
+
+    <!-- DATA GRIDS -->
+    <Color
+		x:Key="DataGridHeaderRowBackgroundColor">#37374B</Color>
+    <Color
+		x:Key="DataGridHeaderTextColor">#C8C8D4</Color>
+    <Color
+		x:Key="DataGridBackgroundColor">#45455C</Color>
+    <Color
+		x:Key="DataGridCellTextColor">#C8C8D4</Color>
+
+    <!-- DIALOGS & POPUPS -->
+    <x:Double
+		x:Key="DialogsCornerRadius">4</x:Double>
+    <x:Int32
+		x:Key="DialogsButtonCornerRadius">6</x:Int32>
+
+    <x:Double
+		x:Key="DialogsButtonWidthRequest">126</x:Double>
+    <x:Double
+		x:Key="DialogsButtonHeightRequest">32</x:Double>
+    <Thickness
+		x:Key="DialogsButtonMargin">5,0</Thickness>
+    
+    <Color
+		x:Key="DialogsShimBackgroundColor">#CC000000</Color>
+    <Color
+		x:Key="CustomActionSheetShimBackgroundColor">#CC000000</Color>
+
+    <Color
+		x:Key="CustomActionSheetBackgroundColor">#F1F3F5</Color>
+    <Color
+		x:Key="CustomActionSheetTextColor">#666666</Color>
+    
+    <!-- TAGS -->
+    <Thickness
+		x:Key="TagItemMargin">4,2</Thickness>
+    <Thickness
+		x:Key="TagItemPadding">10,0</Thickness>
+    <x:Double
+		x:Key="TagItemCornerRadius">13</x:Double>
+    <x:Double
+		x:Key="TagItemFontSize">12</x:Double>
+    <x:Double
+		x:Key="TagItemIconSize">12</x:Double>
+    <x:Double
+		x:Key="TagItemImageSize">16</x:Double>
+    <Color
+		x:Key="TagItemBackgroundColor">#A7A7A7</Color>
+    <Color
+		x:Key="TagItemTextColor">White</Color>
+    <Color
+		x:Key="TagItemYellowBackgroundColor">#FFFF00</Color>
+
+    <!-- CIRCLE ACTION BUTTON FLAT -->
+    <Color
+		x:Key="CircleActionButtonFlatBackgroundColor">#A7A7A7</Color>
+    <Color
+		x:Key="CircleActionButtonFlatBorderColor">Transparent</Color>
+    <Color
+		x:Key="CircleActionButtonFlatIconColor">White</Color>
+    <Color
+		x:Key="CircleActionButtonFlatTextColor">White</Color>
+    
+    <!-- GENERAL COLORS -->
+    <Color
+		x:Key="InverseTextColor">#292939</Color>
+    <Color
+		x:Key="BrandColor">#494967</Color>
+    <Color
+		x:Key="BrandNameColor">#FFFFFF</Color>
+    <Color
+		x:Key="BaseLightTextColor">#7b7b7b</Color>
+    <Color
+		x:Key="OverImageTextColor">#FFFFFF</Color>
+    <Color
+		x:Key="OverImageHighlightedColor">#00ADC9</Color>
+    <Color
+        x:Key="WinnerGreen">#00CC00</Color>
+    
+    <Color
+		x:Key="EcommercePromoTextColor">#FFFFFF</Color>
+    <Color
+		x:Key="SocialHeaderTextColor">#666666</Color>
+    <Color
+		x:Key="ArticleHeaderBackgroundColor">#11FFFFFF</Color>
+    <Color
+		x:Key="ListViewItemTextColor">#666666</Color>
+    <Color
+		x:Key="AboutHeaderBackgroundColor">#FFFFFF</Color>
+    
+    <Color
+		x:Key="BasePageColor">#A9A9A9</Color>
+    
+    <Color
+		x:Key="BaseCardViewColor">#FFFFFF</Color>
+    <Color
+		x:Key="BaseTabbedPageColor">#fafafa</Color>
+    
+    <Color
+		x:Key="MainWrapperBackgroundColor">#d3d3d3</Color>
+    
+    <Color
+		x:Key="CategoriesListIconColor">#55000000</Color>
+    <Color
+		x:Key="DashboardIconColor">#FFFFFF</Color>
+    
+    <!-- COMPLEMENT COLORS -->
+    <Color
+		x:Key="ComplementColor">#A7A7A7</Color>
+    <Color
+		x:Key="TranslucidBlack">#55000000</Color>
+    <Color
+		x:Key="TranslucidWhite">#22000000</Color>
+    
+    <!-- INDICATOR COLORS -->
+    <Color
+		x:Key="OkColor">#22C064</Color>
+    <Color
+		x:Key="ErrorColor">Red</Color>
+    <Color
+		x:Key="WarningColor">#ffc107</Color>
+    <Color
+		x:Key="NotificationColor">#1274d1</Color>
+    <Color
+		x:Key="RedNotificationColor">Red</Color>
+    <Color
+		x:Key="DisabledColor">#bbbbbb</Color>
+    
+    <!-- BUTTONS & ENTRY COLORS -->
+    <Color
+		x:Key="PrimaryActionButtonStartColor">#292939</Color>
+    <Color
+		x:Key="PrimaryActionButtonEndColor">#301a65</Color>
+    <!--
+    <Color
+		x:Key="PrimaryActionButtonEndColor">#292939</Color>
+    -->
+    <Color
+		x:Key="SaveButtonColor">#22c064</Color>
+    <Color
+		x:Key="DeleteButtonColor">#EB505C</Color>
+    
+    <Color
+		x:Key="TranslucidButtonColor">#33FFFFFF</Color>
+    
+    <!-- ENTRIES AND EDITORS COMMON PROPERTIES -->
+    <Color
+		x:Key="PlaceholderColor">#22ffffff</Color>
+    <Color
+		x:Key="EntryAndEditorsBackgroundColor">#37374B</Color>
+    <Color
+		x:Key="EntryAndEditorsBorderColor">#37374B</Color>
+    <x:Single
+		x:Key="EntryAndEditorsBorderWidth">1</x:Single>
+    <OnPlatform
+		x:Key="EntryAndEditorsHorizontalPadding"
+		x:TypeArguments="x:Single">
+        <On
+			Platform="iOS"
+			Value="12" />
+        <On
+			Platform="Android"
+			Value="30" />
+    </OnPlatform>
+
+    <!-- ENTRIES PROPERTIES -->
+    <x:Double
+		x:Key="EntryHeightRequest">70</x:Double>
+    <x:Single
+		x:Key="EntryBorderCornerRadiusCornerRadius">6</x:Single>
+
+    <!-- EDITORS PROPERTIES -->
+    <x:Double
+		x:Key="EditorHeightRequest">100</x:Double>
+    <x:Double
+		x:Key="EditorFontSize">14</x:Double>
+    <x:Single
+		x:Key="EditorBorderCornerRadiusCornerRadius">6</x:Single>
+
+    <Color
+		x:Key="RoundedLabelBackgroundColor">#525ABB</Color>
+    
+    <!-- MAIN MENU COLORS -->
+    <Color
+		x:Key="MainMenuHeaderBackgroundColor">Transparent</Color>
+    <Color
+		x:Key="MainMenuBackgroundColor">Transparent</Color>
+    <Color
+		x:Key="MainMenuSeparatorColor">Transparent</Color>
+    <Color
+		x:Key="MainMenuTextColor">#FFFFFF</Color>
+    <Color
+		x:Key="MainMenuIconColor">#FFFFFF</Color>
+    
+    <!-- SEPARATORS COLORS -->
+    <Color
+		x:Key="ListViewSeparatorColor">#22000000</Color>
+    <Color
+		x:Key="BaseSeparatorColor">#7b7b7b</Color>
+    
+    <!-- CHAT COLORS -->
+    <Color
+		x:Key="ChatRightBalloonBackgroundColor">#A7A7A7</Color>
+    <Color
+		x:Key="ChatBalloonFooterTextColor">#FFFFFF</Color>
+    <Color
+		x:Key="ChatRightTextColor">#FFFFFF</Color>
+    <Color
+		x:Key="ChatLeftTextColor">#FFFFFF</Color>
+    
+    <!-- OnPlatform does not support DynamicResource so to make the switch color dynamic in iOS it's included
+         in each theme. Android's OnColor only affects the track but not the thumb, so it shouldn't be used -->
+    <Style
+		TargetType="Switch"
+		ApplyToDerivedTypes="true">
+        <Setter
+			Property="OnColor">
+            <OnPlatform
+				x:TypeArguments="Color">
+                    <On
+					Platform="iOS"
+					Value="{ StaticResource AccentColor }" />
+                </OnPlatform>
+        </Setter>
+    </Style>
+    
+    <x:Double
+		x:Key="MainMenuBackgroundImageOpacity">0.25</x:Double>
+    
+    <!--RATINGS COLORS-->
+    <Color
+		x:Key="RatingsColor">#ffb300</Color>
+
+    <!-- TAB CONTROL COLORS -->
+    <Color
+		x:Key="AndroidTabStripBackgroundColor">#11000000</Color>
+    <OnPlatform
+		x:Key="AndroidBottomTabStripBackgroundColor"
+		x:TypeArguments="Color"
+		Default="{ StaticResource ArticleHeaderBackgroundColor }" />
+    <Color
+		x:Key="AndroidTabItemDefaultTextColor">#77FFFFFF</Color>
+    <Color
+		x:Key="AndroidTabItemSelectedTextColor">#FFFFFF</Color>
+    <Color
+		x:Key="AndroidSelectedBackgroasundColor">#FF177A</Color>
+    <OnPlatform
+		x:Key="AndroidSelectedBackgroundColor"
+		x:TypeArguments="Color"
+		Default="{ StaticResource AccentColor }" />
+    <Color
+		x:Key="SimpleTabDefaultStateTextColor">White</Color>
+
+
+    <!-- GRADIENTS -->
+    
+    <!-- APP NAVIGATION BAR -->
+
+    <!-- FLOWS NAVIGATION BARS -->
+
+    <!-- MAIN MENU  -->
+
+    <!-- BUTTONS GRADIENTS -->
+    
+    
+    <!-- SPECIFIC -->
+
+    <!-- CUSTOM ACTION SHEET -->
+
+
+
+</ResourceDictionary>

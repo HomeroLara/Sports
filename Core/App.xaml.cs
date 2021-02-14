@@ -4,6 +4,8 @@ using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Sports.Core.ViewModels;
+using Sports.Core;
+using Sports.Core.Helpers;
 
 namespace Sports.Core
 {
