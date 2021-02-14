@@ -6,6 +6,10 @@ using Foundation;
 using UIKit;
 using Sports.Core;
 
+using FFImageLoading.Forms.Platform;
+using FFImageLoading.Svg.Forms;
+using FFImageLoading.Forms;
+
 namespace Sports.iOS
 {
     // The UIApplicationDelegate for the application. This class is responsible for launching the 
@@ -25,6 +29,11 @@ namespace Sports.iOS
         {
             global::Xamarin.Forms.Forms.SetFlags("CollectionView_Experimental");
             global::Xamarin.Forms.Forms.Init();
+
+
+            var ignore = typeof(SvgCachedImage);
+            CachedImageRenderer.Init(); // Initializing FFImageLoading
+
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

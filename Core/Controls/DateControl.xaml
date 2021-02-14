@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Sports.Core.Controls.DateControl">
+
+    <ContentView.Content>
+
+        
+        <CollectionView
+            x:Name="collectionViewDates"
+            Grid.Column="1"
+            BackgroundColor="Transparent"
+            HeightRequest="60"
+            HorizontalScrollBarVisibility="Never"
+            ItemsSource="{Binding Dates}"
+            SelectedItem="{Binding SelectedDate}"
+            SelectionChangedCommand="{Binding SelectDateCommand}"
+            SelectionChangedCommandParameter="{Binding SelectedDate}"
+            SelectionMode="Single">
+
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout ItemSpacing="5" Orientation="Horizontal" />
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame
+                        Padding="5,0,5,5"
+                        BackgroundColor="{ Binding BackgroundColor }"
+                        CornerRadius="10"
+                        HasShadow="False"
+                        IsClippedToBounds="True"
+                        WidthRequest="30">
+                        <Grid
+                            HorizontalOptions="Center"
+                            RowDefinitions="auto, auto"
+                            VerticalOptions="CenterAndExpand">
+                            
+                            <Label
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                FontFamily="MuliBold"
+                                FontSize="Micro"
+                                HorizontalTextAlignment="Center"
+                                Text="{Binding Month}"
+                                TextColor="{Binding TextColor}"  />
+
+                            <Label
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                FontFamily="MuliBold"
+                                FontSize="Micro"
+                                HorizontalTextAlignment="Center"
+                                Text="{Binding Day}"
+                                TextColor="{Binding TextColor}" />
+                            <Label
+                                Grid.Row="2"
+                                Grid.Column="0"
+                                FontFamily="MuliBold"
+                                FontSize="Micro"
+                                HorizontalTextAlignment="Center"
+                                Text="{Binding DayWeek}"
+                                TextColor="{Binding TextColor}" />
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </ContentView.Content>
+
+</ContentView>
