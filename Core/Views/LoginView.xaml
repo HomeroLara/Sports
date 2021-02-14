@@ -2,32 +2,156 @@
 <views:BaseView 
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:vm="clr-namespace:Sports.Core.ViewModels"
     xmlns:views="clr-namespace:Sports.Core.Views"
-    Shell.NavBarIsVisible="True"
-    Shell.FlyoutBehavior="Disabled"
-    Shell.TabBarIsVisible="False"
-    Shell.PresentationMode="ModalAnimated"
     xmlns:viewModels="clr-namespace:Sports.Core.ViewModels"
     viewModels:ViewModelLocator.AutoWireViewModel="True"
+	NavigationPage.HasNavigationBar="False"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.PresentationMode="ModalAnimated"
+	Shell.NavBarIsVisible="False"
+	xmlns:controls="clr-namespace:Sports.Core.Controls"
+    xmlns:xfCustom="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    xmlns:local="clr-namespace:Sports.Core"
+	xmlns:ffsvgimageloading="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+	BackgroundColor="{ DynamicResource PrimaryColor }"
     x:Class="Sports.Core.Views.LoginView">
 
+
     <ContentPage.Content>
-        
-        <StackLayout
-            Orientation="Vertical"
-            VerticalOptions="CenterAndExpand"
-            HorizontalOptions="CenterAndExpand">
-            
-            <Button
-				x:Name="btnLogin"
-				Style="{ StaticResource PrimaryActionButtonStyle }"
-				VerticalOptions="End"
-				Text="Log In!"
-				Command="{Binding LoginCommand}"
-				WidthRequest="200"
-				HorizontalOptions="Fill"/>
-            
-        </StackLayout>
+		<!-- MAIN CONTAINER -->
+        <Grid
+			ColumnSpacing="0"
+			RowSpacing="0"
+			RowDefinitions="30*, 70*"
+			HorizontalOptions="FillAndExpand"
+			VerticalOptions="StartAndExpand">
+
+			<!-- LOGO -->
+			<StackLayout
+				BackgroundColor="Red"
+				VerticalOptions="Center"
+				Grid.Row="0">
+				<!--
+				<ffsvgimageloading:SvgCachedImage
+					FadeAnimationEnabled="true"
+					HeightRequest="100"
+					WidthRequest="100"
+					Source="spondoo_white.svg"/>
+				-->
+			</StackLayout>
+
+			<xfCustom:PancakeView
+				x:Name="frameButtons"
+				Grid.Row="1"
+				Padding="0"
+				HorizontalOptions="FillAndExpand"
+				BackgroundColor="{StaticResource WhiteColor}"
+				VerticalOptions="FillAndExpand"
+				Style="{ StaticResource PancakeCard }">
+
+				
+				<!---FIELDS CONTAINER-->
+				<Grid
+					RowSpacing="20"
+					ColumnSpacing="15"
+					ColumnDefinitions="*"
+					RowDefinitions="05*, 10*, 10*, 15*, 10*, 10*, 40*"
+					Padding="20"
+					VerticalOptions="StartAndExpand"
+					Style="{ StaticResource ResponsiveLandscapeMarginStyle }">
+				
+					<ActivityIndicator
+						Grid.Column="0"
+						Grid.Row="0"
+						HorizontalOptions="Center"
+						VerticalOptions="End"
+						IsRunning="{ Binding IsBusy }"/>
+
+					<controls:CustomEntry
+						Grid.Column="0"
+						Grid.Row="1"
+						BorderThickness="1"
+						HorizontalOptions="FillAndExpand"
+						CornerRadius="10"
+						BorderColor="{ StaticResource InverseTextColor }"
+						Text="{ Binding UserName }"
+						Placeholder="Email"
+						PlaceholderColor="{DynamicResource InverseTextColor}"
+						FontSize="18"
+						Style="{ StaticResource SingleLineEntryStyle }"/>
+
+					<controls:CustomEntry
+						Grid.Column="0"
+						Grid.Row="2"
+						CornerRadius="10"
+						HorizontalOptions="FillAndExpand"
+						Placeholder="Password"
+						Text="{ Binding Password }"
+						PlaceholderColor="{DynamicResource InverseTextColor}"
+						IsPassword="true"
+						Style="{ StaticResource SingleLineEntryStyle }"
+						BorderThickness="1"
+						BorderColor="{ StaticResource InverseTextColor }"
+						FontSize="18"
+						VerticalOptions="StartAndExpand"/>
+
+					<Button
+						x:Name="btnLogin"
+						Grid.Column="0"
+						Grid.Row="3"
+						Style="{ StaticResource PrimaryActionButtonStyle }"
+						VerticalOptions="End"
+						Text="Login"
+						Command="{ Binding LoginCommand }"
+						WidthRequest="200"
+						HorizontalOptions="Fill">
+
+					</Button>
+				
+					<BoxView
+						Grid.Column="0"
+						Grid.Row="4"
+						HeightRequest="1"
+						VerticalOptions="Start"
+						HorizontalOptions="Center"
+						WidthRequest="300"
+						BackgroundColor="{ DynamicResource BaseTextColor }" />
+
+					<Label
+						Grid.Column="0"
+						Grid.Row="4"
+						HorizontalOptions="Center"
+						VerticalOptions="Center"
+						FontSize="14"
+						Text="Forgot Password">
+
+						<Label.GestureRecognizers>
+							<TapGestureRecognizer
+								Command="{ Binding RegisterCommand }"
+								NumberOfTapsRequired="1"/>
+						</Label.GestureRecognizers>
+
+					</Label>
+
+					<Button
+						x:Name="btnSignup"
+						Grid.Column="0"
+						Grid.Row="6"
+						BackgroundColor="{StaticResource WhiteColor}"
+						TextColor="{StaticResource BaseTextColor}"
+						FontSize="{StaticResource BaseFontSize}"
+						CornerRadius="{DynamicResource BaseButtonCornerRadius}" 
+						BorderColor="{StaticResource PrimaryActionButtonStartColor}"
+						BorderWidth="1"
+						HeightRequest="{DynamicResource BaseButtonHeight}"
+						VerticalOptions="End"
+						Text="Sign Up"
+						WidthRequest="200"
+						HorizontalOptions="Fill" />
+				</Grid>
+
+			</xfCustom:PancakeView>
+
+        </Grid>
     </ContentPage.Content>
 </views:BaseView>

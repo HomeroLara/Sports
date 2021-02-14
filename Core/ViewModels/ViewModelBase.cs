@@ -15,7 +15,7 @@ namespace Sports.Core.ViewModels
         private bool _isBusy = false;
         private bool _isRefreshing = false;
         private bool _navigatedSuccessfully = false;
-        private string title = string.Empty;
+        private string _title = string.Empty;
         #endregion
 
         #region PUBLIC MEMBERS
@@ -41,10 +41,10 @@ namespace Sports.Core.ViewModels
 
         public string Title
         {
-            get { return title; }
+            get { return _title; }
             set
             {
-                title = value;
+                _title = value;
                 OnPropertyChanged();
             }
         }
@@ -82,7 +82,6 @@ namespace Sports.Core.ViewModels
         {
             return Task.CompletedTask;
         }
-        // You may also wish to implement any of the following...
         //Task BeforeAppearing(); // Called before a viewmodel appears, when navigating either forwards or backwards
         //Task AfterAppearing(); // Called after a viewmodel appears, when navigating either forwards or backwards
         //Task BeforeNavigateAway(); // Called before a viewmodel disappears, when navigating either forwards or backwards

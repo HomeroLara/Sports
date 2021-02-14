@@ -11,7 +11,7 @@ namespace Sports.Core.Helpers
 
         public static bool SetAppTheme()
         {
-            ICollection<ResourceDictionary> mergedDictionaries = Application.Current.Resources.MergedDictionaries;
+            var mergedDictionaries = Application.Current.Resources.MergedDictionaries;
             mergedDictionaries.Add(new LiteTheme());
             return true;
         }

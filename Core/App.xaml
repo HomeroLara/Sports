@@ -2,6 +2,7 @@
 <Application
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:xfCustom="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     xmlns:local="clr-namespace:Sports.Core"
     x:Class="Sports.Core.App">
     <!--
@@ -366,6 +367,27 @@
 					Property="DetailColor"
 					Value="{ DynamicResource BaseTextColor }" />
             </Style>
+
+			<Style x:Key="PancakeCard"
+				TargetType="xfCustom:PancakeView">
+				<Setter
+					Property="CornerRadius"
+					Value="60, 60, 0, 0"/>
+				<Setter
+					Property="Shadow"
+					Value="{xfCustom:ShadowMarkup BlurRadius=8, Opacity=0.2, Offset='4,4'}"/>
+				<Setter
+					Property="BackgroundColor"
+					Value="{ DynamicResource BaseCardViewColor }" />
+				<!--
+				<Setter
+					Property="BorderThickness"
+					Value="10"/>
+				<Setter
+					Property="BorderColor"
+					Value="{ DynamicResource PrimaryColor }"/>
+				-->
+			</Style>
 
             <Style
 				TargetType="SearchBar"

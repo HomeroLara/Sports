@@ -29,8 +29,8 @@ namespace Sports.Core.Services
         private readonly string UrlDataProviderEndpointBaseDefault = string.Empty;
         #endregion
 
-        public SettingsService() {
-            var t = "";
+        public SettingsService()
+        {
         }
 
         #region Settings Properties
