@@ -9,11 +9,17 @@
     x:Class="Sports.Core.Views.LoadingView">
     
     <ContentPage.Content>
-        <StackLayout>
-            <ActivityIndicator Color="Red"
-                               IsRunning="True"
-                               IsVisible="True" />
+        <StackLayout
+            Orientation="Vertical"
+            VerticalOptions="CenterAndExpand"
+            HorizontalOptions="CenterAndExpand">
+
+            <ActivityIndicator
+                Color="{ DynamicResource PrimaryColor }"
+                IsRunning="True"
+                IsVisible="True" />
             <Label Text="Loading ..." />
+
         </StackLayout>
     </ContentPage.Content>
     

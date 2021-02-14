@@ -37,6 +37,7 @@ namespace Sports.Core.ViewModels
 
         #region COMMANDS
         public AsyncCommand LoginCommand => new AsyncCommand(async() => await Login(), (_) => !IsBusy);
+        public AsyncCommand RegisterCommand => new AsyncCommand(async() => await Register(), (_) => !IsBusy);
         #endregion
 
         #region CONSTRUCTORS
