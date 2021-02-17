@@ -10,9 +10,19 @@ public class DateModel : Observable
     public bool Selected { get; set; }
     public DateTime Date { get; set; }
 
+    private string _frameBorderColor;
     private string _backgroundColor;
     private string _textColor;
 
+    public string FrameBorderColor
+    {
+        get => _frameBorderColor;
+        set
+        {
+            _frameBorderColor = value;
+            OnPropertyChanged("FrameBorderColor");
+        }
+    }
 
     public string BackgroundColor
     {

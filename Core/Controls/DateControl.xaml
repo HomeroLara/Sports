@@ -33,6 +33,7 @@
                         CornerRadius="10"
                         HasShadow="False"
                         IsClippedToBounds="True"
+                        BorderColor="{ Binding FrameBorderColor }"
                         WidthRequest="30">
                         <Grid
                             HorizontalOptions="Center"

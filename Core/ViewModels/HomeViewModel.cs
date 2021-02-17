@@ -75,6 +75,7 @@ namespace Sports.Core.ViewModels
                     Date = new DateTime(dateInit.Year, dateInit.Month, i),
                     Selected = i == DateTime.Today.Day,
                     BackgroundColor = i == DateTime.Today.Day ? "#252A37" : "Transparent",
+                    FrameBorderColor = i == DateTime.Today.Day ? "#FFFFFF" : "#252A37",
                     TextColor = i == DateTime.Today.Day ? "#FFFFFF" : "#252A37",
                 });
             }
@@ -93,6 +94,7 @@ namespace Sports.Core.ViewModels
                     item.Selected = false;
                     item.BackgroundColor = "Transparent";
                     item.TextColor = "#252A37";
+                    item.FrameBorderColor = "#252A37";
                 });
 
                 var index = Dates.ToList().FindIndex(p => p.Day == model.Day && p.DayWeek == model.DayWeek);
@@ -100,6 +102,7 @@ namespace Sports.Core.ViewModels
                 {
                     Dates[index].BackgroundColor = "#252A37";
                     Dates[index].TextColor = "#FFFFFF";
+                    Dates[index].FrameBorderColor = "#FFFFFF";
                     Dates[index].Selected = true;
                 }
             }
