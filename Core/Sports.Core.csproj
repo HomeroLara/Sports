@@ -27,6 +27,8 @@
     <Folder Include="Styles\" />
     <Folder Include="Controls\" />
     <Folder Include="Services\Validation\" />
+    <Folder Include="Assets\" />
+    <Folder Include="Assets\Logos\" />
   </ItemGroup>
 
   <ItemGroup>

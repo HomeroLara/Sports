@@ -14,6 +14,7 @@
             BackgroundColor="Transparent"
             HeightRequest="60"
             HorizontalScrollBarVisibility="Never"
+            SelectionChanged="CollectionViewDates_SelectionChanged"
             ItemsSource="{Binding Dates}"
             SelectedItem="{Binding SelectedDate}"
             SelectionChangedCommand="{Binding SelectDateCommand}"

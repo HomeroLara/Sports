@@ -121,6 +121,11 @@
     <AndroidResource Include="Resources\drawable\xamarin_logo.png" />
     <AndroidResource Include="Resources\drawable\icon_about.png" />
     <AndroidResource Include="Resources\drawable\icon_feed.png" />
+    <AndroidResource Include="..\..\Core\Assets\Logos\spondoo_white.svg">
+      <Link>Resources\drawable\spondoo_white.svg</Link>
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Core\Sports.Core.csproj">

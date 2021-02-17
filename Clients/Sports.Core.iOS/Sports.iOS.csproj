@@ -128,6 +128,9 @@
     <BundleResource Include="Resources\xamarin_logo%402x.png" />
     <BundleResource Include="Resources\xamarin_logo%403x.png" />
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
+    <BundleResource Include="..\..\Core\Assets\Logos\spondoo_white.svg">
+      <Link>Resources\spondoo_white.svg</Link>
+    </BundleResource>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

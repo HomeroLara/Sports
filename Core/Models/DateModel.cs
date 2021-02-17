@@ -1,15 +1,19 @@
 ﻿using System;
 using Sports.Core;
+using Sports.Core.Helpers;
 
 public class DateModel : Observable
 {
-    public int Year { get; set; }
-    public int Month { get; set; }
-    public int Day { get; set; }
+    public string Month { get; set; }
+    public string Day { get; set; }
     public string DayWeek { get; set; }
     public bool Selected { get; set; }
+    public DateTime Date { get; set; }
 
     private string _backgroundColor;
+    private string _textColor;
+
+
     public string BackgroundColor
     {
         get => _backgroundColor;
@@ -20,7 +24,6 @@ public class DateModel : Observable
         }
     }
 
-    private string _textColor;
     public string TextColor
     {
         get => _textColor;
@@ -34,10 +37,5 @@ public class DateModel : Observable
 
     public DateModel()
     {
-    }
-
-    public DateTime GetDate()
-    {
-        return new DateTime(Year, Month, Day);
     }
 }

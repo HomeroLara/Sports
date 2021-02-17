@@ -4,15 +4,19 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:views="clr-namespace:Sports.Core.Views"
     xmlns:vm="clr-namespace:Sports.Core.ViewModels"
-    vm:ViewModelLocator.AutoWireAndInitializeViewModel="True"
+    xmlns:controls="clr-namespace:Sports.Core.Controls"
+    vm:ViewModelLocator.AutoWireViewModel="True"
     Shell.TabBarIsVisible="False"
     x:Class="Sports.Core.Views.HomeView">
 
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout
+            Padding="5,10"
+            VerticalOptions="StartAndExpand"
+            HorizontalOptions="CenterAndExpand">
+            <controls:DateControl
+                x:Name="calendarView"
+                ItemsSource="{ Binding Dates }" />
         </StackLayout>
     </ContentPage.Content>
 </views:BaseView>

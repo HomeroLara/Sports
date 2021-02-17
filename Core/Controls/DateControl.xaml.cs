@@ -54,5 +54,10 @@ namespace Sports.Core.Controls
             await Task.Delay(250);
             _control.collectionViewDates.ScrollTo(_index);
         }
+
+        protected void CollectionViewDates_SelectionChanged(System.Object sender, Xamarin.Forms.SelectionChangedEventArgs e)
+        {
+            collectionViewDates.SelectedItem = null;
+        }
     }
 }
