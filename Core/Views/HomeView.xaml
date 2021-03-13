@@ -17,6 +17,8 @@
             <controls:DateControl
                 x:Name="calendarView"
                 ItemsSource="{ Binding Dates }" />
+
+            <controls:CalendarControl/>
         </StackLayout>
     </ContentPage.Content>
 </views:BaseView>

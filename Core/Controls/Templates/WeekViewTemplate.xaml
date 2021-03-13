@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:Sports.Core.Controls"
+    x:Class="Sports.Core.Controls.Templates.WeekViewTemplate">
+
+    <ContentView.Content>
+        <CollectionView
+            x:Name="collectionViewMonth"
+            Grid.Column="1"
+            BackgroundColor="Green"
+            HeightRequest="60"
+            HorizontalScrollBarVisibility="Never"
+            ItemsSource="{Binding WeeklyDates}"
+            SelectionMode="Single">
+
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout ItemSpacing="5" Orientation="Horizontal" />
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    
+                    <Frame
+                        Padding="5,2,5,2"
+                        BackgroundColor="{ Binding BackgroundColor }"
+                        CornerRadius="10"
+                        HasShadow="False"
+                        IsClippedToBounds="True"
+                        WidthRequest="30">
+
+                        <Label
+                            FontFamily="MuliBold"
+                            FontSize="Micro"
+                            HorizontalTextAlignment="Center"
+                            Text="{Binding DayWeek}"
+                            TextColor="{Binding TextColor}" />
+
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </ContentView.Content>
+
+</ContentView>

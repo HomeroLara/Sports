@@ -118,7 +118,7 @@ namespace Sports.Core.ViewModels
             viewModel?.ScalfoldViewModel();
         }
 
-        private static async Task OnAutoWireAndAutoInitializeAsync(BindableObject bindable, object oldValue, object newValue)
+        private static async void OnAutoWireAndAutoInitializeAsync(BindableObject bindable, object oldValue, object newValue)
         {
             var view = bindable as Element;
             if (view == null)

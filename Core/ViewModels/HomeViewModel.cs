@@ -15,10 +15,20 @@ namespace Sports.Core.ViewModels
         #region PRIVATE MEMBERS
         private readonly INavigationService _navigationService;
         private ObservableCollection<DateModel> _dates;
+        private ObservableCollection<WeekModel> _weeks;
         private DateModel _selectedDate;
         #endregion
 
         #region PUBLIC MEMBERS
+        public ObservableCollection<WeekModel> Weeks
+        {
+            get => _weeks;
+            set
+            {
+                _weeks = value;
+                OnPropertyChanged();
+            }
+        }
         public ObservableCollection<DateModel> Dates
         {
             get => _dates;
@@ -49,12 +59,26 @@ namespace Sports.Core.ViewModels
         {
             _navigationService = navigationService;
             LoadDates();
+            LoadWeeks();
         }
         #endregion
 
         #region PUBLIC METHODS
         public override async Task ScalfoldViewModel(INavigationParameters parameters = null)
         {
+        }
+        #endregion
+
+        #region TESTING STUFF OUT
+        private void LoadWeeks()
+        {
+            var week = GetWeekNumberOfMonth(DateTime.Today);
+            var today = DateTime.Today;
+            var days = DateTime.DaysInMonth(DateTime.Today.Year, DateTime.Today.Month);
+            var weeks = (int)Math.Ceiling(days / 7.0);
+
+            var daysinMonth = new int[12] { 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+            var daysofWeek = new int[7] { 1, 2, 3, 4, 5, 6, 7 };
         }
         #endregion
 
@@ -106,6 +130,19 @@ namespace Sports.Core.ViewModels
                     Dates[index].Selected = true;
                 }
             }
+        }
+
+        private int GetWeekNumberOfMonth(DateTime date)
+        {
+            date = date.Date;
+            DateTime firstMonthDay = new DateTime(date.Year, date.Month, 1);
+            DateTime firstMonthMonday = firstMonthDay.AddDays((DayOfWeek.Monday + 7 - firstMonthDay.DayOfWeek) % 7);
+            if (firstMonthMonday > date)
+            {
+                firstMonthDay = firstMonthDay.AddMonths(-1);
+                firstMonthMonday = firstMonthDay.AddDays((DayOfWeek.Monday + 7 - firstMonthDay.DayOfWeek) % 7);
+            }
+            return (date - firstMonthMonday).Days / 7 + 1;
         }
         #endregion
     }

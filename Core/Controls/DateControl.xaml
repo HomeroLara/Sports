@@ -28,7 +28,7 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Frame
-                        Padding="5,0,5,5"
+                        Padding="5,2,5,2"
                         BackgroundColor="{ Binding BackgroundColor }"
                         CornerRadius="10"
                         HasShadow="False"
