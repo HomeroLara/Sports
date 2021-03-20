@@ -4,7 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:views="clr-namespace:Sports.Core.Views"
     xmlns:viewModels="clr-namespace:Sports.Core.ViewModels"
-    viewModels:ViewModelLocator.AutoWireViewModel="True"
+    viewModels:ViewModelLocator.AutoWireAndInitializeViewModel="True"
 	NavigationPage.HasNavigationBar="False"
     Shell.FlyoutBehavior="Disabled"
     Shell.PresentationMode="ModalAnimated"

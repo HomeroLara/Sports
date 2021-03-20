@@ -6,6 +6,7 @@ using System.Reflection;
 using System.Threading.Tasks;
 
 using Sports.Core.ViewModels;
+using Sports.Core.Helpers;
 using Sports.Core.Services;
 using Xamarin.Forms;
 using TinyIoC;
@@ -67,6 +68,7 @@ namespace Sports.Core.ViewModels
             _container.Register<INavigationParameters, NavigationParameters>();
             _container.Register<INavigationService, NavigationService>();
             _container.Register<ISettingsService, SettingsService>();
+            _container.Register<ISportsService, SportsService>();
         }
 
         public static void UpdateDependencies(bool useMockServices)
@@ -115,7 +117,8 @@ namespace Sports.Core.ViewModels
 
             var viewType = view.GetType();
             var viewModel = GetViewModel(viewType);
-            viewModel?.ScalfoldViewModel();
+            view.BindingContext = viewModel;
+            viewModel?.ScalfoldViewModel().FireAndForget();
         }
 
         private static async void OnAutoWireAndAutoInitializeAsync(BindableObject bindable, object oldValue, object newValue)

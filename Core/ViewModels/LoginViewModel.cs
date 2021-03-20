@@ -2,6 +2,7 @@
 using Sports.Core.Services;
 using System.Threading.Tasks;
 using AsyncAwaitBestPractices.MVVM;
+using System.Collections.Generic;
 
 namespace Sports.Core.ViewModels
 {
@@ -63,6 +64,13 @@ namespace Sports.Core.ViewModels
             finally
             {
                 IsBusy = false;
+            }
+        }
+
+        public override void ApplyQueryAttributes(IDictionary<string, string> query)
+        {
+            if (query.Count > 0)
+            {
             }
         }
 

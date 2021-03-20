@@ -6,8 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AsyncAwaitBestPractices" Version="5.0.2" />
-    <PackageReference Include="AsyncAwaitBestPractices.MVVM" Version="5.0.2" />
+    <PackageReference Include="AsyncAwaitBestPractices" Version="5.1.0" />
+    <PackageReference Include="AsyncAwaitBestPractices.MVVM" Version="5.1.0" />
     <PackageReference Include="Flurl" Version="3.0.1" />
     <PackageReference Include="Flurl.Http" Version="3.0.1" />
     <PackageReference Include="Resizetizer.NT" Version="0.2.0" />
@@ -20,6 +20,11 @@
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />  
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
     <PackageReference Include="Xamarin.Forms.PancakeView" Version="2.3.0.759" />
+    <PackageReference Include="MethodDecorator.Fody" Version="1.1.1" />
+    <PackageReference Include="Fody" Version="6.4.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>
@@ -29,7 +34,11 @@
     <Folder Include="Services\Validation\" />
     <Folder Include="Assets\" />
     <Folder Include="Assets\Logos\" />
-    <Folder Include="Controls\Templates\" />
+    <Folder Include="Views\Templates\" />
+    <Folder Include="Services\Sports\" />
+    <Folder Include="Models\Sports\" />
+    <Folder Include="Assets\Logos\Sports\" />
+    <Folder Include="Views\TemplateSelectors\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -48,5 +57,15 @@
     <EmbeddedResource Update="Views\RegistrationView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Assets\Logos\Sports\nba_logo.png" />
+    <None Remove="Assets\Logos\Sports\nfl_logo.png" />
+    <None Remove="Assets\Logos\Sports\ufc_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <SharedImage Include="Assets\Logos\Sports\nba_logo.png" BaseSize="100,100" />
+    <SharedImage Include="Assets\Logos\Sports\nfl_logo.png" BaseSize="100,100" />
+    <SharedImage Include="Assets\Logos\Sports\ufc_logo.png" BaseSize="100,100" />
   </ItemGroup>
 </Project>

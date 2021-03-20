@@ -6,7 +6,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using AsyncAwaitBestPractices.MVVM;
 using Sports.Core.Models;
+using Sports.Core.Models.Sports;
 using Sports.Core.Helpers;
+using System.Web;
 
 namespace Sports.Core.ViewModels
 {
@@ -14,12 +16,25 @@ namespace Sports.Core.ViewModels
     {
         #region PRIVATE MEMBERS
         private readonly INavigationService _navigationService;
+        private readonly ISportsService _sportsService;
         private ObservableCollection<DateModel> _dates;
         private ObservableCollection<WeekModel> _weeks;
         private DateModel _selectedDate;
+        private List<Sport> _sports;
+        private ObservableCollection<object> _templateModels;
         #endregion
 
         #region PUBLIC MEMBERS
+        public ObservableCollection<object> TemplateModels
+        {
+            get => _templateModels;
+            set
+            {
+                _templateModels = value;
+                OnPropertyChanged();
+            }
+        }
+
         public ObservableCollection<WeekModel> Weeks
         {
             get => _weeks;
@@ -29,12 +44,23 @@ namespace Sports.Core.ViewModels
                 OnPropertyChanged();
             }
         }
+
         public ObservableCollection<DateModel> Dates
         {
             get => _dates;
             set
             {
                 _dates = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public List<Sport> Sports
+        {
+            get => _sports;
+            set
+            {
+                _sports = value;
                 OnPropertyChanged();
             }
         }
@@ -55,17 +81,30 @@ namespace Sports.Core.ViewModels
         #endregion
 
         #region CONSTRUCTORS
-        public HomeViewModel(INavigationService navigationService)
+        public HomeViewModel(INavigationService navigationService, ISportsService sportsService)
         {
             _navigationService = navigationService;
-            LoadDates();
-            LoadWeeks();
+            _sportsService = sportsService;
+            _templateModels = new ObservableCollection<object>();
         }
         #endregion
 
         #region PUBLIC METHODS
+
+        public override void ApplyQueryAttributes(IDictionary<string, string> query)
+        {
+            if (query.Count > 0)
+            {
+                //TODO: setup models
+            }
+        }
+
         public override async Task ScalfoldViewModel(INavigationParameters parameters = null)
         {
+            LoadDates();
+            LoadWeeks();
+            Sports = await _sportsService.GetSports();
+            _templateModels.Add(Sports);
         }
         #endregion
 

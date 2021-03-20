@@ -6,15 +6,18 @@ using Xamarin.Forms.Xaml;
 using Sports.Core.ViewModels;
 using Sports.Core;
 using Sports.Core.Helpers;
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 
 namespace Sports.Core
 {
-    public partial class App : Application
+    public partial class App : Xamarin.Forms.Application
     {
 
         public App()
         {
             InitializeComponent();
+            On<iOS>().SetHandleControlUpdatesOnMainThread(true);
             var nav = new NavigationService(new SettingsService());
 
             MainPage = new AppShell(nav);

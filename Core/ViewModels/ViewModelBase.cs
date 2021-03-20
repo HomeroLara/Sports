@@ -4,12 +4,13 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using System.Web;
 
 using Sports.Core.Services;
 
 namespace Sports.Core.ViewModels
 {
-    public class ViewModelBase: Observable
+    public class ViewModelBase: Observable, IQueryAttributable
     {
         #region PRIVATE MEMBERS
         private bool _isBusy = false;
@@ -65,6 +66,10 @@ namespace Sports.Core.ViewModels
         {
         }
         #endregion
+
+        public virtual void ApplyQueryAttributes(IDictionary<string, string> query)
+        {
+        }
 
 
         /// <summary>
