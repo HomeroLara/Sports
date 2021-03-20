@@ -14,7 +14,7 @@
         
         <Grid
             Margin="0,10,0,10"
-            RowDefinitions="155"
+            RowDefinitions="150"
             HorizontalOptions="Start"
             VerticalOptions="Center">
 
@@ -71,7 +71,7 @@
                                 BackgroundGradientStartPoint="0,0"
                                 BackgroundGradientEndPoint="1,0"
                                 CornerRadius="12"
-                                HeightRequest="155"
+                                HeightRequest="145"
                                 VerticalOptions="Start"
                                 WidthRequest="140">
                                 <pancake:PancakeView.Border>
