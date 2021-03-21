@@ -26,6 +26,7 @@
                 HorizontalScrollBarVisibility="Never"
                 VerticalOptions="Start"
                 SelectionMode="Single"
+                SelectionChanged="collectionViewSports_SelectionChanged"
                 SelectionChangedCommand="{Binding SportTappedCommand}"
                 SelectionChangedCommandParameter="{ Binding SelectedItem, Source={x:Reference collectionViewSports} }"
                 ItemsSource="{Binding .}">
@@ -52,7 +53,7 @@
                     <DataTemplate>
 
                         <Grid
-                            BackgroundColor="{DynamicResource GameCardBackgroundColor}"
+                            BackgroundColor="Transparent"
                             RowDefinitions="auto">
                             
                             <ffimageloading:CachedImage

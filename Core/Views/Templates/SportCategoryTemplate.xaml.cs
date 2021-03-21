@@ -28,5 +28,10 @@ namespace Sports.Core.Views.Templates
         {
             InitializeComponent();
         }
+
+        void collectionViewSports_SelectionChanged(System.Object sender, Xamarin.Forms.SelectionChangedEventArgs e)
+        {
+            collectionViewSports.SelectedItem = null;
+        }
     }
 }
