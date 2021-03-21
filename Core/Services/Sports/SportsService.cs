@@ -26,20 +26,34 @@ namespace Sports.Core.Services
                     new Sport(){
                         Name = "National Football League",
                         SportType = SportType.NFL,
-                        LogoUri = "nfl_logo"
+                        LogoUri = "nfl_logo",
                      },
 
                     new Sport(){
                         Name = "National Basketball Association",
                         SportType = SportType.NBA,
-                        LogoUri = "nba_logo"
+                        LogoUri = "nba_logo",
                     },
 
                     new Sport(){
                         Name = "Ultimate Fighting Championshio",
                         SportType = SportType.MMA,
-                        LogoUri = "ufc_logo"
-                    }
+                        LogoUri = "ufc_logo",
+                    },
+
+                    new Sport()
+                    {
+                        Name = "National Hockey League",
+                        SportType = SportType.NHL,
+                        LogoUri = "nhl_logo",
+                    },
+
+                    new Sport()
+                    {
+                        Name = "Major League Baseball",
+                        SportType = SportType.MLB,
+                        LogoUri = "mlb_logo",
+                    },
             };
 
             return Task.Run(() => {

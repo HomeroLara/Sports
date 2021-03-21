@@ -23,7 +23,6 @@ namespace Sports.Core.Controls
                defaultBindingMode: BindingMode.TwoWay,
                propertyChanged: ItemsSourcePropertyChanged);
 
-        private static bool _datesSet;
         private static int _index;
         private static DateControl _control;
 

@@ -62,10 +62,14 @@
     <None Remove="Assets\Logos\Sports\nba_logo.png" />
     <None Remove="Assets\Logos\Sports\nfl_logo.png" />
     <None Remove="Assets\Logos\Sports\ufc_logo.png" />
+    <None Remove="Assets\Logos\Sports\nhl_logo.png" />
+    <None Remove="Assets\Logos\Sports\mlb_logo.png" />
   </ItemGroup>
   <ItemGroup>
     <SharedImage Include="Assets\Logos\Sports\nba_logo.png" BaseSize="100,100" />
     <SharedImage Include="Assets\Logos\Sports\nfl_logo.png" BaseSize="100,100" />
     <SharedImage Include="Assets\Logos\Sports\ufc_logo.png" BaseSize="100,100" />
+    <SharedImage Include="Assets\Logos\Sports\nhl_logo.png" BaseSize="100,100" />
+    <SharedImage Include="Assets\Logos\Sports\mlb_logo.png" BaseSize="100,100" />
   </ItemGroup>
 </Project>
