@@ -4,13 +4,14 @@ using Xamarin.Forms;
 
 using Sports.Core.Views.Templates;
 using Sports.Core.Models.Sports;
+using Sports.Core.ViewModels;
 
 namespace Sports.Core.Views.TemplateSelectors
 {
 
     public class HomeViewTemplateSelector : DataTemplateSelector
     {
-        public DataTemplate NBAOverviewDataTemplate { get; set; }
+        public DataTemplate NBAScheduleDataTemplate { get; set; }
 
         public DataTemplate NFLOverviewDataTemplate { get; set; }
 
@@ -32,6 +33,14 @@ namespace Sports.Core.Views.TemplateSelectors
                     SportCategoryTemplate = new DataTemplate(typeof(SportCategoryTemplate));
                 }
                 return SportCategoryTemplate;
+            }
+            else if(item is NBAGameViewModel)
+            {
+                if(NBAScheduleDataTemplate is null)
+                {
+                    NBAScheduleDataTemplate = new DataTemplate(typeof(NBAScheduleTemplate));
+                }
+                return NBAScheduleDataTemplate;
             }
             return new DataTemplate();
         }

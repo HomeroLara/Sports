@@ -19,17 +19,17 @@
 
     <ContentPage.Content>
         <StackLayout
-            Padding="5,10"
             VerticalOptions="StartAndExpand"
             HorizontalOptions="CenterAndExpand">
 
             <controls:DateControl
+                Padding="5"
                 x:Name="calendarView"
                 ItemsSource="{ Binding Dates }" />
 
             <CollectionView
                 x:Name="collectionHomeMain"
-                BackgroundColor="{ StaticResource WhiteColor }" 
+                BackgroundColor="Transparent" 
                 VerticalScrollBarVisibility="Never"
                 VerticalOptions="FillAndExpand"
                 HorizontalOptions="CenterAndExpand"

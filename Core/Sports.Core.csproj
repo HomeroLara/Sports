@@ -25,6 +25,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="Sharpnado.Shadows" Version="1.2.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -39,6 +40,9 @@
     <Folder Include="Models\Sports\" />
     <Folder Include="Assets\Logos\Sports\" />
     <Folder Include="Views\TemplateSelectors\" />
+    <Folder Include="Assets\NBA\" />
+    <Folder Include="Assets\NBA\Teams\" />
+    <Folder Include="Models\Sports\NBA\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -64,6 +68,36 @@
     <None Remove="Assets\Logos\Sports\ufc_logo.png" />
     <None Remove="Assets\Logos\Sports\nhl_logo.png" />
     <None Remove="Assets\Logos\Sports\mlb_logo.png" />
+    <None Remove="Assets\NBA\Teams\nba_atl.svg" />
+    <None Remove="Assets\NBA\Teams\nba_bkn.svg" />
+    <None Remove="Assets\NBA\Teams\nba_bos.svg" />
+    <None Remove="Assets\NBA\Teams\nba_cha.svg" />
+    <None Remove="Assets\NBA\Teams\nba_chi.svg" />
+    <None Remove="Assets\NBA\Teams\nba_cle.svg" />
+    <None Remove="Assets\NBA\Teams\nba_dal.svg" />
+    <None Remove="Assets\NBA\Teams\nba_den.svg" />
+    <None Remove="Assets\NBA\Teams\nba_det.svg" />
+    <None Remove="Assets\NBA\Teams\nba_gs.svg" />
+    <None Remove="Assets\NBA\Teams\nba_hou.svg" />
+    <None Remove="Assets\NBA\Teams\nba_ind.svg" />
+    <None Remove="Assets\NBA\Teams\nba_lac.svg" />
+    <None Remove="Assets\NBA\Teams\nba_lal.svg" />
+    <None Remove="Assets\NBA\Teams\nba_mem.svg" />
+    <None Remove="Assets\NBA\Teams\nba_mia.svg" />
+    <None Remove="Assets\NBA\Teams\nba_mil.svg" />
+    <None Remove="Assets\NBA\Teams\nba_min.svg" />
+    <None Remove="Assets\NBA\Teams\nba_no.svg" />
+    <None Remove="Assets\NBA\Teams\nba_ny.svg" />
+    <None Remove="Assets\NBA\Teams\nba_okc.svg" />
+    <None Remove="Assets\NBA\Teams\nba_orl.svg" />
+    <None Remove="Assets\NBA\Teams\nba_phi.svg" />
+    <None Remove="Assets\NBA\Teams\nba_pho.svg" />
+    <None Remove="Assets\NBA\Teams\nba_por.svg" />
+    <None Remove="Assets\NBA\Teams\nba_sa.svg" />
+    <None Remove="Assets\NBA\Teams\nba_sac.svg" />
+    <None Remove="Assets\NBA\Teams\nba_tor.svg" />
+    <None Remove="Assets\NBA\Teams\nba_uta.svg" />
+    <None Remove="Assets\NBA\Teams\nba_was.svg" />
   </ItemGroup>
   <ItemGroup>
     <SharedImage Include="Assets\Logos\Sports\nba_logo.png" BaseSize="100,100" />
@@ -71,5 +105,35 @@
     <SharedImage Include="Assets\Logos\Sports\ufc_logo.png" BaseSize="100,100" />
     <SharedImage Include="Assets\Logos\Sports\nhl_logo.png" BaseSize="100,100" />
     <SharedImage Include="Assets\Logos\Sports\mlb_logo.png" BaseSize="100,100" />
+    <SharedImage Include="Assets\NBA\Teams\nba_atl.svg" BaseSize="100,100" />
+    <SharedImage Include="Assets\NBA\Teams\nba_bkn.svg" BaseSize="100,100" />
+    <SharedImage Include="Assets\NBA\Teams\nba_bos.svg" BaseSize="100,100" />
+    <SharedImage Include="Assets\NBA\Teams\nba_cha.svg" BaseSize="100,100" />
+    <SharedImage Include="Assets\NBA\Teams\nba_chi.svg" BaseSize="100,100" />
+    <SharedImage Include="Assets\NBA\Teams\nba_cle.svg" BaseSize="100,100" />
+    <SharedImage Include="Assets\NBA\Teams\nba_dal.svg" BaseSize="100,100" />
+    <SharedImage Include="Assets\NBA\Teams\nba_den.svg" BaseSize="100,100" />
+    <SharedImage Include="Assets\NBA\Teams\nba_det.svg" BaseSize="100,100" />
+    <SharedImage Include="Assets\NBA\Teams\nba_gs.svg" BaseSize="100,100" />
+    <SharedImage Include="Assets\NBA\Teams\nba_hou.svg" BaseSize="100,100" />
+    <SharedImage Include="Assets\NBA\Teams\nba_ind.svg" BaseSize="100,100" />
+    <SharedImage Include="Assets\NBA\Teams\nba_lac.svg" BaseSize="100,100" />
+    <SharedImage Include="Assets\NBA\Teams\nba_lal.svg" BaseSize="100,100" />
+    <SharedImage Include="Assets\NBA\Teams\nba_mem.svg" BaseSize="100,100" />
+    <SharedImage Include="Assets\NBA\Teams\nba_mia.svg" BaseSize="100,100" />
+    <SharedImage Include="Assets\NBA\Teams\nba_mil.svg" BaseSize="100,100" />
+    <SharedImage Include="Assets\NBA\Teams\nba_min.svg" BaseSize="100,100" />
+    <SharedImage Include="Assets\NBA\Teams\nba_no.svg" BaseSize="100,100" />
+    <SharedImage Include="Assets\NBA\Teams\nba_ny.svg" BaseSize="100,100" />
+    <SharedImage Include="Assets\NBA\Teams\nba_okc.svg" BaseSize="100,100" />
+    <SharedImage Include="Assets\NBA\Teams\nba_orl.svg" BaseSize="100,100" />
+    <SharedImage Include="Assets\NBA\Teams\nba_phi.svg" BaseSize="100,100" />
+    <SharedImage Include="Assets\NBA\Teams\nba_pho.svg" BaseSize="100,100" />
+    <SharedImage Include="Assets\NBA\Teams\nba_por.svg" BaseSize="100,100" />
+    <SharedImage Include="Assets\NBA\Teams\nba_sa.svg" BaseSize="100,100" />
+    <SharedImage Include="Assets\NBA\Teams\nba_sac.svg" BaseSize="100,100" />
+    <SharedImage Include="Assets\NBA\Teams\nba_tor.svg" BaseSize="100,100" />
+    <SharedImage Include="Assets\NBA\Teams\nba_uta.svg" BaseSize="100,100" />
+    <SharedImage Include="Assets\NBA\Teams\nba_was.svg" BaseSize="100,100" />
   </ItemGroup>
 </Project>

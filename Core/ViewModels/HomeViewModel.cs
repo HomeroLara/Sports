@@ -7,8 +7,8 @@ using System.Collections.ObjectModel;
 using AsyncAwaitBestPractices.MVVM;
 using Sports.Core.Models;
 using Sports.Core.Models.Sports;
+using Sports.Core.Models.Sports.NBA;
 using Sports.Core.Helpers;
-using System.Web;
 
 namespace Sports.Core.ViewModels
 {
@@ -101,23 +101,21 @@ namespace Sports.Core.ViewModels
 
         public override async Task ScalfoldViewModel(INavigationParameters parameters = null)
         {
-            LoadDates();
-            LoadWeeks();
-            Sports = await _sportsService.GetSports();
-            _templateModels.Add(Sports);
-        }
-        #endregion
+            try
+            {
+                LoadDates();
+                Sports = await _sportsService.GetSports();
+                _templateModels.Add(Sports);
 
-        #region TESTING STUFF OUT
-        private void LoadWeeks()
-        {
-            var week = GetWeekNumberOfMonth(DateTime.Today);
-            var today = DateTime.Today;
-            var days = DateTime.DaysInMonth(DateTime.Today.Year, DateTime.Today.Month);
-            var weeks = (int)Math.Ceiling(days / 7.0);
-
-            var daysinMonth = new int[12] { 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
-            var daysofWeek = new int[7] { 1, 2, 3, 4, 5, 6, 7 };
+                var nbaViewModel = new NBAGameViewModel(_sportsService);
+                await nbaViewModel.ScalfoldViewModel();
+                _templateModels.Add(nbaViewModel);
+            }
+            catch(Exception ex)
+            {
+                var error = ex.Message;
+                //TODO: error logging / reporting
+            }
         }
         #endregion
 

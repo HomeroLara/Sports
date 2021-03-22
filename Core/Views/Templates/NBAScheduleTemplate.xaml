@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:templates="clr-namespace:Sports.Core.Views.Templates"
+    x:Class="Sports.Core.Views.Templates.NBAScheduleTemplate">
+
+    <ContentView.Content>
+
+        
+        <StackLayout
+            x:Name="nbaGames"
+            Grid.Row="1"
+            Grid.Column="0"
+            Spacing="15"
+            Orientation="Vertical"
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="StartAndExpand"
+            BindableLayout.ItemsSource="{ Binding Games}">
+
+            <BindableLayout.ItemTemplate>
+                <DataTemplate>
+                    <templates:GameTemplate
+                        HorizontalOptions="FillAndExpand"/>
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+
+        </StackLayout>
+        
+    </ContentView.Content>
+</ContentView>
