@@ -43,7 +43,7 @@ namespace Sports.Core.ViewModels
         {
             try
             {
-                var payload = await _sportsService.GetNBAGamesByDate(DateTime.Today);
+                GetGamesByDatePayload payload = await _sportsService.GetNBAGamesByDate(DateTime.Today);
                 Games = new ObservableCollection<Game>(payload.Games);
             }
             catch (Exception ex)

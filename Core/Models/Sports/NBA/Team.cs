@@ -28,5 +28,9 @@ namespace Sports.Core.Models.Sports.NBA
 
         [JsonProperty("linescore")]
         public List<Linescore> Linescore { get; set; }
+
+        public string LogoUri {
+            get { return $"nba_{TriCode}".ToLower(); }
+        }
     }
 }

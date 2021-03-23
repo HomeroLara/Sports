@@ -2,34 +2,66 @@
 <ContentView
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:sh="http://sharpnado.com"
+    xmlns:sh="clr-namespace:Sharpnado.Shades;assembly=Sharpnado.Shadows"
 	xmlns:ffsvgimageloading="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
     x:Class="Sports.Core.Views.Templates.GameTemplate">
     <ContentView.Content>
-        <StackLayout
-            HorizontalOptions="CenterAndExpand"
-            VerticalOptions="StartAndExpand"
-            Orientation="Horizontal">
 
-            
-            <ffsvgimageloading:SvgCachedImage
-                x:Name="homeTeam"
-                HorizontalOptions="Start"
-                VerticalOptions="CenterAndExpand"
-				FadeAnimationEnabled="true"
-				Source="{ Binding HTeam.TriCode , StringFormat='nba_{0}' }"
-				HeightRequest="50"
-                WidthRequest="50"/>
-            
-            <ffsvgimageloading:SvgCachedImage
-                x:Name="visitingTeam"
-                HorizontalOptions="Start"
-                VerticalOptions="CenterAndExpand"
-				FadeAnimationEnabled="true"
-				Source="{ Binding VTeam.TriCode , StringFormat='nba_{0}' }"
-				HeightRequest="50"
-                WidthRequest="50"/>
+        <sh:Shadows
+            BackgroundColor="Transparent"
+            Margin="0,20,0,20"
+            x:Name="shadows">
+            <sh:Shadows.Shades>
+                <sh:ImmutableShades>
+                    <sh:Shade BlurRadius="10"
+                              Opacity="0.5"
+                              Offset="10,10"
+                              Color="#000000" />
+                </sh:ImmutableShades>
+            </sh:Shadows.Shades>
 
-        </StackLayout>
+            <Frame
+                BorderColor="{ StaticResource WhiteColor }"
+                HorizontalOptions="FillAndExpand"
+                Padding="5"
+                Margin="5,0,5,0"
+                VerticalOptions="Center"
+                BackgroundColor="White"
+                CornerRadius="10">
+
+                <Grid
+                    BackgroundColor="Transparent"
+                    Padding="5"
+                    VerticalOptions="StartAndExpand"
+                    HorizontalOptions="FillAndExpand"
+                    RowSpacing="0"
+                    ColumnDefinitions="*"
+                    RowDefinitions="50*, 50*">
+            
+                    <ffsvgimageloading:SvgCachedImage
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        x:Name="homeTeam"
+                        HorizontalOptions="Start"
+                        VerticalOptions="CenterAndExpand"
+				        FadeAnimationEnabled="true"
+				        Source="{ Binding HTeam.LogoUri }"
+				        HeightRequest="50"
+                        WidthRequest="50"/>
+            
+                    <ffsvgimageloading:SvgCachedImage
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        x:Name="visitingTeam"
+                        HorizontalOptions="Start"
+                        VerticalOptions="CenterAndExpand"
+				        FadeAnimationEnabled="true"
+				        Source="{ Binding VTeam.LogoUri }"
+				        HeightRequest="50"
+                        WidthRequest="50"/>
+
+                </Grid>
+        </Frame>
+    </sh:Shadows>
     </ContentView.Content>
 </ContentView>
