@@ -18,7 +18,6 @@ namespace Sports.Core.ViewModels
         private readonly INavigationService _navigationService;
         private readonly ISportsService _sportsService;
         private ObservableCollection<DateModel> _dates;
-        private ObservableCollection<WeekModel> _weeks;
         private DateModel _selectedDate;
         private ObservableCollection<object> _templateModels;
         #endregion
@@ -30,16 +29,6 @@ namespace Sports.Core.ViewModels
             set
             {
                 _templateModels = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public ObservableCollection<WeekModel> Weeks
-        {
-            get => _weeks;
-            set
-            {
-                _weeks = value;
                 OnPropertyChanged();
             }
         }
@@ -157,19 +146,6 @@ namespace Sports.Core.ViewModels
                     Dates[index].Selected = true;
                 }
             }
-        }
-
-        private int GetWeekNumberOfMonth(DateTime date)
-        {
-            date = date.Date;
-            DateTime firstMonthDay = new DateTime(date.Year, date.Month, 1);
-            DateTime firstMonthMonday = firstMonthDay.AddDays((DayOfWeek.Monday + 7 - firstMonthDay.DayOfWeek) % 7);
-            if (firstMonthMonday > date)
-            {
-                firstMonthDay = firstMonthDay.AddMonths(-1);
-                firstMonthMonday = firstMonthDay.AddDays((DayOfWeek.Monday + 7 - firstMonthDay.DayOfWeek) % 7);
-            }
-            return (date - firstMonthMonday).Days / 7 + 1;
         }
         #endregion
     }
