@@ -3,6 +3,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:sh="http://sharpnado.com"
+	xmlns:ffsvgimageloading="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
     x:Class="Sports.Core.Views.Templates.GameTemplate">
     <ContentView.Content>
         <StackLayout
@@ -10,13 +11,24 @@
             VerticalOptions="StartAndExpand"
             Orientation="Horizontal">
 
-            <Label
-                Margin="10"
-                Text="{ Binding HTeam.TriCode }"/>
-
-            <Label
-                Margin="10"
-                Text="{ Binding VTeam.TriCode }"/>
+            
+            <ffsvgimageloading:SvgCachedImage
+                x:Name="homeTeam"
+                HorizontalOptions="Start"
+                VerticalOptions="CenterAndExpand"
+				FadeAnimationEnabled="true"
+				Source="{ Binding HTeam.TriCode , StringFormat='nba_{0}' }"
+				HeightRequest="50"
+                WidthRequest="50"/>
+            
+            <ffsvgimageloading:SvgCachedImage
+                x:Name="visitingTeam"
+                HorizontalOptions="Start"
+                VerticalOptions="CenterAndExpand"
+				FadeAnimationEnabled="true"
+				Source="{ Binding VTeam.TriCode , StringFormat='nba_{0}' }"
+				HeightRequest="50"
+                WidthRequest="50"/>
 
         </StackLayout>
     </ContentView.Content>

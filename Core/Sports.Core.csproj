@@ -98,6 +98,7 @@
     <None Remove="Assets\NBA\Teams\nba_tor.svg" />
     <None Remove="Assets\NBA\Teams\nba_uta.svg" />
     <None Remove="Assets\NBA\Teams\nba_was.svg" />
+    <None Remove="Assets\NBA\Teams\nba_sas.png" />
   </ItemGroup>
   <ItemGroup>
     <SharedImage Include="Assets\Logos\Sports\nba_logo.png" BaseSize="100,100" />
@@ -135,5 +136,6 @@
     <SharedImage Include="Assets\NBA\Teams\nba_tor.svg" BaseSize="100,100" />
     <SharedImage Include="Assets\NBA\Teams\nba_uta.svg" BaseSize="100,100" />
     <SharedImage Include="Assets\NBA\Teams\nba_was.svg" BaseSize="100,100" />
+    <SharedImage Include="Assets\NBA\Teams\nba_sas.png" BaseSize="100,100" />
   </ItemGroup>
 </Project>
