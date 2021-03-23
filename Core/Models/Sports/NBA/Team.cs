@@ -30,6 +30,7 @@ namespace Sports.Core.Models.Sports.NBA
         public List<Linescore> Linescore { get; set; }
 
         public string LogoUri {
+            //TODO: add default team logo incase Tricode is whitespace
             get { return $"nba_{TriCode}".ToLower(); }
         }
     }

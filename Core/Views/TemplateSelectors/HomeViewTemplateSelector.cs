@@ -26,7 +26,7 @@ namespace Sports.Core.Views.TemplateSelectors
 
         protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
         {
-            if (item is List<Sport>)
+            if (item is SportCategoryViewModel)
             {
                 if (SportCategoryTemplate is null)
                 {

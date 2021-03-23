@@ -27,9 +27,7 @@
                 VerticalOptions="Start"
                 SelectionMode="Single"
                 SelectionChanged="collectionViewSports_SelectionChanged"
-                SelectionChangedCommand="{Binding SportTappedCommand}"
-                SelectionChangedCommandParameter="{ Binding SelectedItem, Source={x:Reference collectionViewSports} }"
-                ItemsSource="{Binding .}">
+                ItemsSource="{Binding Sports}">
 
                 <CollectionView.Header>
                     <StackLayout>

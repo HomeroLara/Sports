@@ -20,7 +20,6 @@ namespace Sports.Core.ViewModels
         private ObservableCollection<DateModel> _dates;
         private ObservableCollection<WeekModel> _weeks;
         private DateModel _selectedDate;
-        private List<Sport> _sports;
         private ObservableCollection<object> _templateModels;
         #endregion
 
@@ -51,16 +50,6 @@ namespace Sports.Core.ViewModels
             set
             {
                 _dates = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public List<Sport> Sports
-        {
-            get => _sports;
-            set
-            {
-                _sports = value;
                 OnPropertyChanged();
             }
         }
@@ -104,8 +93,9 @@ namespace Sports.Core.ViewModels
             try
             {
                 LoadDates();
-                Sports = await _sportsService.GetSports();
-                _templateModels.Add(Sports);
+                var sportsCategoryViewModel = new SportCategoryViewModel(_sportsService);
+                await sportsCategoryViewModel.ScalfoldViewModel();
+                _templateModels.Add(sportsCategoryViewModel);
 
                 var nbaViewModel = new NBAGameViewModel(_sportsService);
                 await nbaViewModel.ScalfoldViewModel();

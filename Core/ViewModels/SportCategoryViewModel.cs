@@ -12,27 +12,31 @@ using Sports.Core.Helpers;
 
 namespace Sports.Core.ViewModels
 {
-    public class NBAGameViewModel: ViewModelBase
+    public class SportCategoryViewModel: ViewModelBase
     {
         #region PRIVATE MEMBERS
+        private readonly INavigationService _navigationService;
         private readonly ISportsService _sportsService;
-        private ObservableCollection<Game> _games;
+        private ObservableCollection<Sport> _sports;
         #endregion
 
         #region PUBLIC MEMBERS
-        public ObservableCollection<Game> Games
+        public ObservableCollection<Sport> Sports
         {
-            get => _games;
+            get => _sports;
             set
             {
-                _games = value;
+                _sports = value;
                 OnPropertyChanged();
             }
         }
         #endregion
 
+        #region COMMANDS
+        #endregion
+
         #region CONSTRUCTORS
-        public NBAGameViewModel(ISportsService sportsService)
+        public SportCategoryViewModel(ISportsService sportsService)
         {
             _sportsService = sportsService;
         }
@@ -41,17 +45,12 @@ namespace Sports.Core.ViewModels
         #region OVERRIDES
         public override async Task ScalfoldViewModel(INavigationParameters parameters = null)
         {
-            try
-            {
-                var payload = await _sportsService.GetNBAGamesByDate(DateTime.Today);
-                Games = new ObservableCollection<Game>(payload.Games);
-            }
-            catch (Exception ex)
-            {
-                var error = ex.Message;
-                //TODO: error logging / reporting
-            }
+            var sports = await _sportsService.GetSports();
+            Sports = new ObservableCollection<Sport>(sports);
         }
+        #endregion
+
+        #region METHODS
         #endregion
     }
 }
