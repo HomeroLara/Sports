@@ -4,12 +4,12 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:sh="clr-namespace:Sharpnado.Shades;assembly=Sharpnado.Shadows"
 	xmlns:ffsvgimageloading="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    Margin="0,10,0,10"
     x:Class="Sports.Core.Views.Templates.GameTemplate">
     <ContentView.Content>
 
         <sh:Shadows
             BackgroundColor="Transparent"
-            Margin="0,20,0,20"
             x:Name="shadows">
             <sh:Shadows.Shades>
                 <sh:ImmutableShades>
