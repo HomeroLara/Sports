@@ -34,7 +34,7 @@ namespace Sports.Core.Views.TemplateSelectors
                 }
                 return SportCategoryTemplate;
             }
-            else if(item is NBAGameViewModel)
+            else if(item is NBAScheduleViewModel)
             {
                 if(NBAScheduleDataTemplate is null)
                 {

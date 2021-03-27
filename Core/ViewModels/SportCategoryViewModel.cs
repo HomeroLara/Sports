@@ -16,7 +16,7 @@ namespace Sports.Core.ViewModels
     {
         #region PRIVATE MEMBERS
         private readonly INavigationService _navigationService;
-        private readonly ISportsService _sportsService;
+        private readonly INBASportService _nbaSportsService;
         private ObservableCollection<Sport> _sports;
         #endregion
 
@@ -36,16 +36,16 @@ namespace Sports.Core.ViewModels
         #endregion
 
         #region CONSTRUCTORS
-        public SportCategoryViewModel(ISportsService sportsService)
+        public SportCategoryViewModel(INBASportService nbaSportService)
         {
-            _sportsService = sportsService;
+            _nbaSportsService = nbaSportService;
         }
         #endregion
 
         #region OVERRIDES
         public override async Task ScalfoldViewModel(INavigationParameters parameters = null)
         {
-            var sports = await _sportsService.GetSports();
+            var sports = await _nbaSportsService.GetSports();
             Sports = new ObservableCollection<Sport>(sports);
         }
         #endregion

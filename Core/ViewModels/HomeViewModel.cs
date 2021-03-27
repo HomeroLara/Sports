@@ -16,7 +16,7 @@ namespace Sports.Core.ViewModels
     {
         #region PRIVATE MEMBERS
         private readonly INavigationService _navigationService;
-        private readonly ISportsService _sportsService;
+        private readonly INBASportService _nbaSportsService;
         private ObservableCollection<DateModel> _dates;
         private DateModel _selectedDate;
         private ObservableCollection<object> _templateModels;
@@ -59,10 +59,10 @@ namespace Sports.Core.ViewModels
         #endregion
 
         #region CONSTRUCTORS
-        public HomeViewModel(INavigationService navigationService, ISportsService sportsService)
+        public HomeViewModel(INavigationService navigationService, INBASportService nbaSportsService)
         {
             _navigationService = navigationService;
-            _sportsService = sportsService;
+            _nbaSportsService = nbaSportsService;
             _templateModels = new ObservableCollection<object>();
         }
         #endregion
@@ -82,11 +82,11 @@ namespace Sports.Core.ViewModels
             try
             {
                 LoadDates();
-                var sportsCategoryViewModel = new SportCategoryViewModel(_sportsService);
+                var sportsCategoryViewModel = new SportCategoryViewModel(_nbaSportsService);
                 await sportsCategoryViewModel.ScalfoldViewModel();
                 _templateModels.Add(sportsCategoryViewModel);
 
-                var nbaViewModel = new NBAGameViewModel(_sportsService);
+                var nbaViewModel = new NBAScheduleViewModel(_nbaSportsService);
                 await nbaViewModel.ScalfoldViewModel();
                 _templateModels.Add(nbaViewModel);
             }

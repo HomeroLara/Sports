@@ -68,7 +68,7 @@ namespace Sports.Core.ViewModels
             _container.Register<INavigationParameters, NavigationParameters>();
             _container.Register<INavigationService, NavigationService>();
             _container.Register<ISettingsService, SettingsService>();
-            _container.Register<ISportsService, SportsService>();
+            _container.Register<INBASportService, NBASportService>();
         }
 
         public static void UpdateDependencies(bool useMockServices)

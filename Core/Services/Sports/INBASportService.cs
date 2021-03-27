@@ -6,8 +6,9 @@ using Sports.Core.Models.Sports.NBA;
 
 namespace Sports.Core.Services
 {
-    public interface ISportsService
+    public interface INBASportService
     {
+        Task<GetAllTeamsPayload> GetTeams();
         Task<List<Sport>> GetSports();
         Task<GetGamesByDatePayload> GetNBAGamesByDate(DateTime date); 
     }

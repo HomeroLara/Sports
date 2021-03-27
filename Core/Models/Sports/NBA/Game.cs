@@ -84,9 +84,18 @@ namespace Sports.Core.Models.Sports.NBA
         public Period Period { get; set; }
 
         [JsonProperty("vTeam")]
-        public Team VTeam { get; set; }
+        public GameTeam VTeam { get; set; }
 
         [JsonProperty("hTeam")]
-        public Team HTeam { get; set; }
+        public GameTeam HTeam { get; set; }
+
+        [JsonProperty("clock")]
+        public string Clock { get; set; }
+
+        [JsonProperty("tickets")]
+        public Tickets Tickets { get; set; }
+
+        [JsonProperty("watch")]
+        public Watch Watch { get; set; }
     }
 }

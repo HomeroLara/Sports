@@ -12,11 +12,12 @@ using Sports.Core.Helpers;
 
 namespace Sports.Core.ViewModels
 {
-    public class NBAGameViewModel: ViewModelBase
+    public class NBAScheduleViewModel : ViewModelBase
     {
         #region PRIVATE MEMBERS
-        private readonly ISportsService _sportsService;
+        private readonly INBASportService _nbaSportsService;
         private ObservableCollection<Game> _games;
+        private List<Team> _teams;
         #endregion
 
         #region PUBLIC MEMBERS
@@ -32,9 +33,9 @@ namespace Sports.Core.ViewModels
         #endregion
 
         #region CONSTRUCTORS
-        public NBAGameViewModel(ISportsService sportsService)
+        public NBAScheduleViewModel(INBASportService nbaSportsService)
         {
-            _sportsService = sportsService;
+            _nbaSportsService = nbaSportsService;
         }
         #endregion
 
@@ -43,8 +44,11 @@ namespace Sports.Core.ViewModels
         {
             try
             {
-                var payload = await _sportsService.GetNBAGamesByDate(DateTime.Today);
+                var payload = await _nbaSportsService.GetNBAGamesByDate(DateTime.Today);
                 Games = new ObservableCollection<Game>(payload.Games);
+
+                var teamPayload = await _nbaSportsService.GetTeams();
+                _teams = teamPayload.League.Teams;
             }
             catch (Exception ex)
             {

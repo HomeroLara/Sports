@@ -7,7 +7,7 @@ using Flurl.Http;
 
 namespace Sports.Core.Services
 {
-    public class SportsService: ISportsService
+    public class NBASportService : INBASportService
     {
         #region PRIVATE MEMBERS
         #endregion
@@ -16,12 +16,22 @@ namespace Sports.Core.Services
         #endregion
 
         #region CONSTRUCTORS
-        public SportsService()
+        public NBASportService()
         {
         }
         #endregion
 
         #region IMPLEMENTATION
+        public Task<GetAllTeamsPayload> GetTeams()
+        {
+            var endPoint = $"http://data.nba.net/prod/v2/2020/teams.json";
+
+            var payload = endPoint
+                .GetJsonAsync<GetAllTeamsPayload>();
+
+            return payload;
+        }
+
         public Task<List<Sport>> GetSports()
         {
             var sports = new List<Sport> {
@@ -63,12 +73,12 @@ namespace Sports.Core.Services
             });
         }
 
-        public Task<GetGamesByDatePayload> GetNBAGamesByDate(DateTime date)
+        public async Task<GetGamesByDatePayload> GetNBAGamesByDate(DateTime date)
         {
             var formattedDate = date.ToString("yyyyMMdd");
             var endPoint = $"http://data.nba.net/prod/v1/{formattedDate}/scoreboard.json";
 
-            var payload = endPoint
+            var payload = await endPoint
                 .GetJsonAsync<GetGamesByDatePayload>();
 
             return payload;
