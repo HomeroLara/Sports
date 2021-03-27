@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Sports.Core.Services;
 using System.Collections.Generic;
@@ -15,6 +16,8 @@ namespace Sports.Core.ViewModels
         private readonly INBASportService _nbaSportsService;
         private ObservableCollection<DateModel> _dates;
         private ObservableCollection<GameTeamDTO> _gameTeamDTOs;
+        private DateModel _selectedDate;
+        private List<Team> _teams;
         #endregion
 
         #region PUBLIC MEMBERS
@@ -37,10 +40,21 @@ namespace Sports.Core.ViewModels
                 OnPropertyChanged();
             }
         }
+
+        public DateModel SelectedDate
+        {
+            get => _selectedDate;
+            set
+            {
+                _selectedDate = value;
+                OnPropertyChanged();
+            }
+        }
         #endregion
 
         #region COMMANDS
         public IAsyncCommand<Game> GameTappedCommand => new AsyncCommand<Game>(async(_) => await GameTapped(_), (_) => !IsBusy);
+        public IAsyncCommand<DateModel> DateTappedCommand => new AsyncCommand<DateModel>(async(_) => await DateTapped(_), (_) => !IsBusy);
         #endregion
 
         #region CONSTRUCTORS
@@ -58,11 +72,10 @@ namespace Sports.Core.ViewModels
             {
                 var teamPayload = await _nbaSportsService.GetTeams();
                 var payload = await _nbaSportsService.GetNBAGamesByDate(DateTime.Today);
-
                 InstanceSettings.Session.NBATeams = teamPayload?.League?.Teams;
-                InstanceSettings.Session.NBAGames = payload?.Games;
+                _teams = teamPayload.League.Teams;
 
-                Games = new ObservableCollection<GameTeamDTO>(payload.GetGameTeamDTOs(teamPayload.League.Teams));
+                await GetGames(DateTime.Today, _teams);
             }
             catch (Exception ex)
             {
@@ -100,6 +113,41 @@ namespace Sports.Core.ViewModels
         private async Task GameTapped(Game game)
         {
             var g = game;
+        }
+        #endregion
+
+        #region PRIVATE METHODS
+        private async Task DateTapped(DateModel model)
+        {
+            if (model != null)
+            {
+                SelectedDate = model;
+                Dates.ToList().ForEach((item) =>
+                {
+                    item.Selected = false;
+                    item.BackgroundColor = "Transparent";
+                    item.TextColor = "#252A37";
+                    item.FrameBorderColor = "#252A37";
+                });
+
+                var index = Dates.ToList().FindIndex(p => p.Day == model.Day && p.DayWeek == model.DayWeek);
+                if (index > -1)
+                {
+                    Dates[index].BackgroundColor = "#252A37";
+                    Dates[index].TextColor = "#FFFFFF";
+                    Dates[index].FrameBorderColor = "#FFFFFF";
+                    Dates[index].Selected = true;
+                }
+
+                await GetGames(SelectedDate.Date, _teams);
+            }
+        }
+
+        private async Task GetGames(DateTime date, List<Team> teams)
+        {
+            var payload = await _nbaSportsService.GetNBAGamesByDate(date);
+            InstanceSettings.Session.NBAGames = payload?.Games;
+            Games = new ObservableCollection<GameTeamDTO>(payload.GetGameTeamDTOs(_teams));
         }
         #endregion
     }

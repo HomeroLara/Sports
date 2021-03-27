@@ -17,7 +17,7 @@
             SelectionChanged="CollectionViewDates_SelectionChanged"
             ItemsSource="{Binding Dates}"
             SelectedItem="{Binding SelectedDate}"
-            SelectionChangedCommand="{Binding SelectDateCommand}"
+            SelectionChangedCommand="{Binding DateTappedCommand}"
             SelectionChangedCommandParameter="{Binding SelectedDate}"
             SelectionMode="Single">
 
