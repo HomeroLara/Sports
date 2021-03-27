@@ -5,6 +5,7 @@
     xmlns:sh="clr-namespace:Sharpnado.Shades;assembly=Sharpnado.Shadows"
 	xmlns:ffsvgimageloading="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
     Margin="0,10,0,10"
+    x:Name="template"
     x:Class="Sports.Core.Views.Templates.GameTemplate">
     <ContentView.Content>
 
@@ -59,6 +60,15 @@
 				        Source="{ Binding VTeam.LogoUri }"
 				        HeightRequest="50"
                         WidthRequest="50"/>
+
+                    <Grid.GestureRecognizers>
+                        
+                        <TapGestureRecognizer
+                            NumberOfTapsRequired="1"
+                            Command="{ Binding GetGameDetailsCommand, Source={x:Reference template} }"
+                            CommandParameter="{ Binding GameParameter, Source={ x:Reference template } }"/>
+
+                    </Grid.GestureRecognizers>
 
                 </Grid>
         </Frame>

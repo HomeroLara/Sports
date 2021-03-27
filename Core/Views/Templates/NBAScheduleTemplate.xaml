@@ -3,6 +3,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:templates="clr-namespace:Sports.Core.Views.Templates"
+    x:Name="view"
     x:Class="Sports.Core.Views.Templates.NBAScheduleTemplate">
 
     <ContentView.Content>
@@ -16,16 +17,19 @@
             Orientation="Vertical"
             HorizontalOptions="CenterAndExpand"
             VerticalOptions="StartAndExpand"
+            
             BindableLayout.ItemsSource="{ Binding Games}">
 
             <BindableLayout.ItemTemplate>
                 <DataTemplate>
                     <templates:GameTemplate
+                        GetGameDetailsCommand="{ Binding BindingContext.GameTappedCommand, Source={ x:Reference nbaGames } }"
+                        GameParameter="{ Binding . }"
                         HorizontalOptions="FillAndExpand"/>
                 </DataTemplate>
             </BindableLayout.ItemTemplate>
-
         </StackLayout>
+
         
     </ContentView.Content>
 </ContentView>

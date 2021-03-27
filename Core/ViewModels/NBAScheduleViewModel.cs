@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Linq;
 using System.Threading.Tasks;
 using Sports.Core.Services;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using AsyncAwaitBestPractices.MVVM;
-using Sports.Core.Models;
-using Sports.Core.Models.Sports;
 using Sports.Core.Models.Sports.NBA;
-using Sports.Core.Helpers;
 
 namespace Sports.Core.ViewModels
 {
@@ -30,6 +26,10 @@ namespace Sports.Core.ViewModels
                 OnPropertyChanged();
             }
         }
+        #endregion
+
+        #region COMMANDS
+        public IAsyncCommand<Game> GameTappedCommand => new AsyncCommand<Game>(async(_) => await GameTapped(_), (_) => !IsBusy);
         #endregion
 
         #region CONSTRUCTORS
@@ -55,6 +55,13 @@ namespace Sports.Core.ViewModels
                 var error = ex.Message;
                 //TODO: error logging / reporting
             }
+        }
+        #endregion
+
+        #region METHODS
+        private async Task GameTapped(Game game)
+        {
+            var g = game;
         }
         #endregion
     }

@@ -19,29 +19,29 @@
 
     <ContentPage.Content>
         
-            <CollectionView
-                x:Name="collectionHomeMain"
-                BackgroundColor="Transparent" 
-                VerticalScrollBarVisibility="Never"
-                VerticalOptions="FillAndExpand"
-                HorizontalOptions="CenterAndExpand"
-                SelectionMode="Single"
-                ItemsSource="{ Binding TemplateModels }"
-                ItemTemplate="{ StaticResource homeTempateSelector }">
-                <CollectionView.Header>
-                    <StackLayout
-                        VerticalOptions="StartAndExpand"
-                        HorizontalOptions="CenterAndExpand">
+        <CollectionView
+            x:Name="collectionHomeMain"
+            BackgroundColor="Transparent" 
+            VerticalScrollBarVisibility="Never"
+            VerticalOptions="FillAndExpand"
+            HorizontalOptions="CenterAndExpand"
+            SelectionMode="Single"
+            ItemsSource="{ Binding TemplateModels }"
+            ItemTemplate="{ StaticResource homeTempateSelector }">
+            <CollectionView.Header>
+                <StackLayout
+                    VerticalOptions="StartAndExpand"
+                    HorizontalOptions="CenterAndExpand">
 
                             
-                        <controls:DateControl
-                            Padding="5"
-                            x:Name="calendarView"
-                            ItemsSource="{ Binding Dates }" />
+                    <controls:DateControl
+                        Padding="5"
+                        x:Name="calendarView"
+                        ItemsSource="{ Binding Dates }" />
 
-                    </StackLayout>
-                </CollectionView.Header>
-            </CollectionView>
+                </StackLayout>
+            </CollectionView.Header>
+        </CollectionView>
 
     </ContentPage.Content>
 </views:BaseView>
