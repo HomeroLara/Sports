@@ -13,18 +13,17 @@ namespace Sports.Core.ViewModels
     {
         #region PRIVATE MEMBERS
         private readonly INBASportService _nbaSportsService;
-        private ObservableCollection<Game> _games;
         private ObservableCollection<DateModel> _dates;
-        private List<Team> _teams;
+        private ObservableCollection<GameTeamDTO> _gameTeamDTOs;
         #endregion
 
         #region PUBLIC MEMBERS
-        public ObservableCollection<Game> Games
+        public ObservableCollection<GameTeamDTO> Games
         {
-            get => _games;
+            get => _gameTeamDTOs;
             set
             {
-                _games = value;
+                _gameTeamDTOs = value;
                 OnPropertyChanged();
             }
         }
@@ -57,11 +56,13 @@ namespace Sports.Core.ViewModels
         {
             try
             {
-                var payload = await _nbaSportsService.GetNBAGamesByDate(DateTime.Today);
-                Games = new ObservableCollection<Game>(payload.Games);
-
                 var teamPayload = await _nbaSportsService.GetTeams();
-                _teams = teamPayload.League.Teams;
+                var payload = await _nbaSportsService.GetNBAGamesByDate(DateTime.Today);
+
+                InstanceSettings.Session.NBATeams = teamPayload?.League?.Teams;
+                InstanceSettings.Session.NBAGames = payload?.Games;
+
+                Games = new ObservableCollection<GameTeamDTO>(payload.GetGameTeamDTOs(teamPayload.League.Teams));
             }
             catch (Exception ex)
             {

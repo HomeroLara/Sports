@@ -60,6 +60,12 @@ namespace Sports.Core.Models.Sports.NBA
         [JsonProperty("linescore")]
         public List<Linescore> Linescore { get; set; }
 
+        public string Display
+        {
+            get {
+                return $"{FullName} ( {Win} - {Loss} )";
+            }
+        }
 
         public string LogoUri
         {

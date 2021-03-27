@@ -51,6 +51,7 @@
                     VerticalScrollBarVisibility="Never"
                     VerticalOptions="FillAndExpand"
                     HorizontalOptions="CenterAndExpand"
+                    SelectionChanged="collectionHomeMain_SelectionChanged"
                     SelectionMode="Single"
                     ItemsSource="{ Binding TemplateModels }"
                     ItemTemplate="{ StaticResource homeTempateSelector }"/>

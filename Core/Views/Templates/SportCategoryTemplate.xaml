@@ -2,6 +2,7 @@
 <ContentView
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:sh="clr-namespace:Sharpnado.Shades;assembly=Sharpnado.Shadows"
     xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     xmlns:sports="clr-namespace:Sports.Core.Models.Sports"
     xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
@@ -15,6 +16,7 @@
             <CollectionView
                 x:Name="collectionViewSports"
                 HeightRequest="150"
+                HorizontalOptions="FillAndExpand"
                 VerticalScrollBarVisibility="Never"
                 HorizontalScrollBarVisibility="Never"
                 VerticalOptions="Start"
@@ -36,44 +38,37 @@
 
                 <CollectionView.ItemsLayout>
                     <LinearItemsLayout
-                        ItemSpacing="15"
+                        ItemSpacing="15" 
                         Orientation="Horizontal" />
                 </CollectionView.ItemsLayout>
 
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
 
-                        <Grid
-                            BackgroundColor="Transparent"
-                            RowDefinitions="auto">
-                            
-                            <pancake:PancakeView
-                                Grid.Row="0"
-                                BackgroundColor="{ DynamicResource GameCardBackgroundColor }"
-                                BackgroundGradientStartPoint="0,0"
-                                BackgroundGradientEndPoint="1,0"
-                                CornerRadius="12"
-                                HeightRequest="145"
+                        <pancake:PancakeView
+                            BackgroundColor="{ DynamicResource PrimaryColor }"
+                            BackgroundGradientStartPoint="0,0"
+                            BackgroundGradientEndPoint="1,0"
+                            CornerRadius="12"
+                            HeightRequest="145"
+                            VerticalOptions="Start"
+                            Shadow="{pancake:ShadowMarkup Color=#FF0000, Offset='10,10'}"
+                            WidthRequest="140">
+                            <pancake:PancakeView.Border>
+                                <pancake:Border Thickness="1" Color="#000000" DrawingStyle="Outside"/>
+                            </pancake:PancakeView.Border>
+
+                            <ffimageloading:CachedImage
+                                Margin="0,10,0,0"
+                                HeightRequest="120"
+                                HorizontalOptions="Center"
                                 VerticalOptions="Start"
-                                WidthRequest="140">
-                                <pancake:PancakeView.Border>
-                                    <pancake:Border Thickness="1" Color="{StaticResource WhiteColor}" DrawingStyle="Outside"/>
-                                </pancake:PancakeView.Border>
+                                WidthRequest="120" 
+				                x:Name="logo"
+				                FadeAnimationEnabled="true"
+				                Source="{ Binding LogoUri }"/>
 
-                                <ffimageloading:CachedImage
-                                    Margin="0,10,0,0"
-                                    HeightRequest="120"
-                                    HorizontalOptions="Center"
-                                    VerticalOptions="Start"
-                                    WidthRequest="120" 
-				                    x:Name="logo"
-				                    FadeAnimationEnabled="true"
-				                    Source="{ Binding LogoUri }"/>
-
-                            </pancake:PancakeView>
-                            
-                                       
-                        </Grid>
+                        </pancake:PancakeView>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>

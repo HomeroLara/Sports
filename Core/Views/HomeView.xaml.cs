@@ -16,5 +16,10 @@ namespace Sports.Core.Views
         {
             InitializeComponent();
         }
+
+        void collectionHomeMain_SelectionChanged(System.Object sender, Xamarin.Forms.SelectionChangedEventArgs e)
+        {
+            collectionHomeMain.SelectedItem = null;
+        }
     }
 }

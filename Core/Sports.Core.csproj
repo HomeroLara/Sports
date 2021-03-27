@@ -43,6 +43,7 @@
     <Folder Include="Assets\NBA\" />
     <Folder Include="Assets\NBA\Teams\" />
     <Folder Include="Models\Sports\NBA\" />
+    <Folder Include="Converters\" />
   </ItemGroup>
 
   <ItemGroup>
