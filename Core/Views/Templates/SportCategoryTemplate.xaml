@@ -5,23 +5,16 @@
     xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     xmlns:sports="clr-namespace:Sports.Core.Models.Sports"
     xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
-    BackgroundColor="{StaticResource PrimaryColor}"
+    BackgroundColor="{StaticResource WhiteColor}"
     x:Class="Sports.Core.Views.Templates.SportCategoryTemplate">
 
     <ContentView.Content>
 
-
         
-        <Grid
-            Margin="0,10,0,10"
-            RowDefinitions="150"
-            HorizontalOptions="Start"
-            VerticalOptions="Center">
-
-            
             <!--BEGIN: Header Square Sports-->
             <CollectionView
                 x:Name="collectionViewSports"
+                HeightRequest="150"
                 VerticalScrollBarVisibility="Never"
                 HorizontalScrollBarVisibility="Never"
                 VerticalOptions="Start"
@@ -67,46 +60,24 @@
                                     <pancake:Border Thickness="1" Color="{StaticResource WhiteColor}" DrawingStyle="Outside"/>
                                 </pancake:PancakeView.Border>
 
-                                <Label
-                                    FontSize="13"
-                                    TextColor="{StaticResource WhiteColor}"
-                                    HorizontalOptions="CenterAndExpand"
-                                    VerticalOptions="End"
-                                    Text="{Binding WeeklyGameCount, StringFormat='Games Today: {0}'}">
-
-                                    <Label.Triggers>
-                                        <DataTrigger
-                                            TargetType="Label"
-                                            Binding="{Binding SportType}"
-                                            Value="{x:Static sports:SportType.NFL}">
-
-                                            <Setter Property="Text" Value="{ Binding WeeklyGameCount, StringFormat='Weekly Games: {0}' }"/>
-
-                                        </DataTrigger>
-                                    </Label.Triggers>
-
-                                </Label>
+                                <ffimageloading:CachedImage
+                                    Margin="0,10,0,0"
+                                    HeightRequest="120"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Start"
+                                    WidthRequest="120" 
+				                    x:Name="logo"
+				                    FadeAnimationEnabled="true"
+				                    Source="{ Binding LogoUri }"/>
 
                             </pancake:PancakeView>
                             
-                            <ffimageloading:CachedImage
-                                Grid.Row="0"
-                                Margin="0,10,0,0"
-                                HeightRequest="120"
-                                HorizontalOptions="Center"
-                                VerticalOptions="Start"
-                                WidthRequest="120" 
-				                x:Name="logo"
-				                FadeAnimationEnabled="true"
-				                Source="{ Binding LogoUri }"/>
                                        
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
             <!--END: Header Square Sports-->
-
-        </Grid>
     </ContentView.Content>
 
 </ContentView>

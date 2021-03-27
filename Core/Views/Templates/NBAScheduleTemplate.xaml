@@ -3,33 +3,55 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:templates="clr-namespace:Sports.Core.Views.Templates"
-    x:Name="view"
-    x:Class="Sports.Core.Views.Templates.NBAScheduleTemplate">
+    xmlns:controls="clr-namespace:Sports.Core.Controls"
+    xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    x:Class="Sports.Core.Views.Templates.NBAScheduleTemplate"
+    x:Name="view">
 
     <ContentView.Content>
-
         
-        <StackLayout
-            x:Name="nbaGames"
-            Grid.Row="1"
-            Grid.Column="0"
-            Spacing="15"
-            Orientation="Vertical"
-            HorizontalOptions="CenterAndExpand"
+        <Grid
+            Margin="10, 20, 10, 10"
             VerticalOptions="StartAndExpand"
+            HorizontalOptions="FillAndExpand"
+            RowDefinitions="auto,90*"
+            ColumnDefinitions="*">
+                
+            <Grid
+                RowDefinitions="*"
+                Margin="10,0,0,5"
+                ColumnDefinitions="*"
+	            Grid.Row="0">
+                <controls:DateControl 
+                    x:Name="calendarView"
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    ItemsSource="{Binding Dates}" />   
+            </Grid>
+
+            <StackLayout
+                x:Name="nbaGames"
+                Grid.Row="1"
+                Grid.Column="0"
+                Spacing="15"
+                Orientation="Vertical"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="StartAndExpand"
             
-            BindableLayout.ItemsSource="{ Binding Games}">
+                BindableLayout.ItemsSource="{ Binding Games}">
 
-            <BindableLayout.ItemTemplate>
-                <DataTemplate>
-                    <templates:GameTemplate
-                        GetGameDetailsCommand="{ Binding BindingContext.GameTappedCommand, Source={ x:Reference nbaGames } }"
-                        GameParameter="{ Binding . }"
-                        HorizontalOptions="FillAndExpand"/>
-                </DataTemplate>
-            </BindableLayout.ItemTemplate>
-        </StackLayout>
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <templates:GameTemplate
+                            GetGameDetailsCommand="{ Binding BindingContext.GameTappedCommand, Source={ x:Reference nbaGames } }"
+                            GameParameter="{ Binding . }"
+                            HorizontalOptions="FillAndExpand"/>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
 
-        
+        </Grid>
+
     </ContentView.Content>
 </ContentView>
