@@ -2,11 +2,10 @@
 <ContentView
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:sh="clr-namespace:Sharpnado.Shades;assembly=Sharpnado.Shadows"
     xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
-    xmlns:sports="clr-namespace:Sports.Core.Models.Sports"
     xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     BackgroundColor="{StaticResource WhiteColor}"
+    Margin="10"
     x:Class="Sports.Core.Views.Templates.SportCategoryTemplate">
 
     <ContentView.Content>
@@ -37,18 +36,18 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate>
 
-                    <pancake:PancakeView
-                        BackgroundColor="{ DynamicResource PrimaryColor }"
-                        CornerRadius="12"
-                        HeightRequest="145"
+                    <Frame
+                        BackgroundColor="{ StaticResource PrimaryColor }"
+                        Padding="0,2,5,2"
                         VerticalOptions="Start"
+                        CornerRadius="12"
+                        HasShadow="False"
+                        IsClippedToBounds="True"
+                        BorderColor="#000000"
+                        HeightRequest="145"
                         WidthRequest="140">
-                            
-                        <pancake:PancakeView.Border>
-                            <pancake:Border Thickness="1" Color="#000000" DrawingStyle="Outside"/>
-                        </pancake:PancakeView.Border>
-                            
 
+                        
                         <ffimageloading:CachedImage
                             Margin="0,10,0,0"
                             HeightRequest="120"
@@ -59,7 +58,7 @@
 				            FadeAnimationEnabled="true"
 				            Source="{ Binding LogoUri }"/>
 
-                    </pancake:PancakeView>
+                    </Frame>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>

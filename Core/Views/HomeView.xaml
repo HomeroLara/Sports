@@ -29,7 +29,18 @@
             SelectionChanged="collectionHomeMain_SelectionChanged"
             SelectionMode="Single"           
             ItemsSource="{ Binding TemplateModels }"
-            ItemTemplate="{ StaticResource homeTempateSelector }"/>
+            ItemTemplate="{ StaticResource homeTempateSelector }">
+
+            <CollectionView.Header>
+                <StackLayout
+                    BackgroundColor="White"
+                    HeightRequest="50"
+                    Orientation="Vertical">
+                    <Label Text=""/>
+                </StackLayout>
+            </CollectionView.Header>
+
+        </CollectionView>
 
     </ContentPage.Content>
 </views:BaseView>

@@ -13,6 +13,7 @@
             Grid.Column="1"
             BackgroundColor="Transparent"
             HeightRequest="60"
+            ItemSizingStrategy="MeasureAllItems"
             HorizontalScrollBarVisibility="Never"
             SelectionChanged="CollectionViewDates_SelectionChanged"
             ItemsSource="{Binding Dates}"
