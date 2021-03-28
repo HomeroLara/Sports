@@ -13,7 +13,7 @@
     <ContentView.Content>
         
         <Grid
-            Margin="10, 20, 10, 10"
+            Margin="1, 20, 1, 10"
             VerticalOptions="StartAndExpand"
             HorizontalOptions="FillAndExpand"
             RowDefinitions="auto,90*"
@@ -32,6 +32,7 @@
             </Grid>
 
             <StackLayout
+                Margin="9, 20, 9, 10"
                 x:Name="nbaGames"
                 Grid.Row="1"
                 Grid.Column="0"

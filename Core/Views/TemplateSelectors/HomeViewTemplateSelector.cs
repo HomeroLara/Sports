@@ -15,8 +15,6 @@ namespace Sports.Core.Views.TemplateSelectors
 
         public DataTemplate NFLOverviewDataTemplate { get; set; }
 
-        public DataTemplate SportCategoryTemplate { get; set; }
-
         public DataTemplate NoGamesDataTemplate { get; set; }
 
         public HomeViewTemplateSelector()
@@ -26,15 +24,7 @@ namespace Sports.Core.Views.TemplateSelectors
 
         protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
         {
-            if (item is SportCategoryViewModel)
-            {
-                if (SportCategoryTemplate is null)
-                {
-                    SportCategoryTemplate = new DataTemplate(typeof(SportCategoryTemplate));
-                }
-                return SportCategoryTemplate;
-            }
-            else if(item is NBAScheduleViewModel)
+            if(item is NBAScheduleViewModel)
             {
                 if(NBAScheduleDataTemplate is null)
                 {

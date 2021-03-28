@@ -5,7 +5,7 @@
     xmlns:views="clr-namespace:Sports.Core.Views"
     xmlns:viewModels="clr-namespace:Sports.Core.ViewModels"
     xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
-    x:DataType="viewModels:HomeViewModel"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     xmlns:templateSelectors="clr-namespace:Sports.Core.Views.TemplateSelectors"
     viewModels:ViewModelLocator.AutoWireAndInitializeViewModel="True"
     
@@ -34,22 +34,81 @@
 
             <CollectionView.Header>
 
-            <pancake:PancakeView
-                Padding="0"
-                HorizontalOptions="FillAndExpand"
-                BackgroundColor="{StaticResource WhiteColor}"
-                VerticalOptions="FillAndExpand"
-                Style="{ StaticResource PancakeCard }">
+                <CollectionView
+                    x:Name="collectionViewSports"
+                    BackgroundColor="{ StaticResource WhiteColor }"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalScrollBarVisibility="Never"
+                    HorizontalScrollBarVisibility="Never"
+                    VerticalOptions="Start"
+                    SelectionMode="Single"
+                    HeightRequest="150"
+                    ItemsSource="{Binding Sports}">
+            
 
-                
-                <StackLayout
-                    BackgroundColor="{StaticResource WhiteColor}"
-                    HeightRequest="50"
-                    Orientation="Vertical">
-                    <Label Text=""/>
-                </StackLayout>
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout
+                            Orientation="Horizontal" />
+                    </CollectionView.ItemsLayout>
 
-            </pancake:PancakeView>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid
+                                RowDefinitions="2*, auto"
+                                ColumnDefinitions="1, 99*, 1">
+                                <BoxView
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    Grid.ColumnSpan="3"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="FillAndExpand"
+                                    BackgroundColor="{ StaticResource WhiteColor }"/>
+
+                                
+                                <BoxView
+                                    Grid.Row="1"
+                                    Grid.Column="0"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="FillAndExpand"
+                                    BackgroundColor="{ StaticResource WhiteColor }"/>
+                                
+                                <Frame
+                                    Grid.Row="1"
+                                    Grid.Column="1"
+                                    BackgroundColor="{ StaticResource PrimaryColor }"
+                                    VerticalOptions="Start"
+                                    CornerRadius="12"
+                                    HasShadow="False"
+                                    IsClippedToBounds="True"
+                                    BorderColor="#000000"
+                                    HeightRequest="145"
+                                    WidthRequest="100">
+
+                        
+                                    <ffimageloading:CachedImage
+                                        Margin="0,10,0,0"
+                                        HeightRequest="120"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Start"
+                                        WidthRequest="120" 
+				                        x:Name="logo"
+				                        FadeAnimationEnabled="true"
+				                        Source="{ Binding LogoUri }"/>
+
+                                </Frame>
+                                <BoxView
+                                    Grid.Row="1"
+                                    Grid.Column="2"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="FillAndExpand"
+                                    BackgroundColor="{ StaticResource WhiteColor }"/>
+                                
+
+                            </Grid>
+
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
 
             </CollectionView.Header>
 

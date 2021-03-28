@@ -18,6 +18,7 @@ namespace Sports.Core.ViewModels
         private readonly INavigationService _navigationService;
         private readonly INBASportService _nbaSportsService;
         private ObservableCollection<object> _templateModels;
+        private ObservableCollection<Sport> _sports;
         #endregion
 
         #region PUBLIC MEMBERS
@@ -27,6 +28,16 @@ namespace Sports.Core.ViewModels
             set
             {
                 _templateModels = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public ObservableCollection<Sport> Sports
+        {
+            get => _sports;
+            set
+            {
+                _sports = value;
                 OnPropertyChanged();
             }
         }
@@ -55,9 +66,9 @@ namespace Sports.Core.ViewModels
         {
             try
             {
-                var sportsCategoryViewModel = new SportCategoryViewModel(_nbaSportsService);
-                await sportsCategoryViewModel.ScalfoldViewModel();
-                _templateModels.Add(sportsCategoryViewModel);
+
+                var sports = await _nbaSportsService.GetSports();
+                Sports = new ObservableCollection<Sport>(sports);
 
                 var nbaViewModel = new NBAScheduleViewModel(_nbaSportsService);
                 await nbaViewModel.ScalfoldViewModel();

@@ -389,6 +389,13 @@
 				-->
 			</Style>
 
+			<Style x:Key="PancakeCardNoShadow"
+				TargetType="xfCustom:PancakeView">
+				<Setter
+					Property="CornerRadius"
+					Value="60, 60, 0, 0"/>
+			</Style>
+
             <Style
 				TargetType="SearchBar"
 				ApplyToDerivedTypes="true">
