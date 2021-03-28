@@ -12,12 +12,13 @@
         <!--BEGIN: Header Square Sports-->
         <CollectionView
             x:Name="collectionViewSports"
-            HeightRequest="150"
+            BackgroundColor="{ StaticResource WhiteColor }"
             HorizontalOptions="FillAndExpand"
             VerticalScrollBarVisibility="Never"
             HorizontalScrollBarVisibility="Never"
             VerticalOptions="Start"
             SelectionMode="Single"
+            HeightRequest="150"
             SelectionChanged="collectionViewSports_SelectionChanged"
             ItemsSource="{Binding Sports}">
             

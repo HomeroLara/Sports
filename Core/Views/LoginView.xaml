@@ -11,7 +11,7 @@
 	Shell.NavBarIsVisible="False"
 	xmlns:ffsvgimageloading="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
 	xmlns:controls="clr-namespace:Sports.Core.Controls"
-    xmlns:xfCustom="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
 	BackgroundColor="{ DynamicResource PrimaryColor }"
     x:Class="Sports.Core.Views.LoginView">
 
@@ -38,7 +38,7 @@
 				
 			</StackLayout>
 
-			<xfCustom:PancakeView
+			<pancake:PancakeView
 				x:Name="frameButtons"
 				Grid.Row="1"
 				Padding="0"
@@ -148,7 +148,7 @@
 						HorizontalOptions="Fill" />
 				</Grid>
 
-			</xfCustom:PancakeView>
+			</pancake:PancakeView>
 
         </Grid>
     </ContentPage.Content>

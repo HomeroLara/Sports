@@ -4,6 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:views="clr-namespace:Sports.Core.Views"
     xmlns:viewModels="clr-namespace:Sports.Core.ViewModels"
+    xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     x:DataType="viewModels:HomeViewModel"
     xmlns:templateSelectors="clr-namespace:Sports.Core.Views.TemplateSelectors"
     viewModels:ViewModelLocator.AutoWireAndInitializeViewModel="True"
@@ -32,13 +33,35 @@
             ItemTemplate="{ StaticResource homeTempateSelector }">
 
             <CollectionView.Header>
+
+            <pancake:PancakeView
+                Padding="0"
+                HorizontalOptions="FillAndExpand"
+                BackgroundColor="{StaticResource WhiteColor}"
+                VerticalOptions="FillAndExpand"
+                Style="{ StaticResource PancakeCard }">
+
+                
+                <StackLayout
+                    BackgroundColor="{StaticResource WhiteColor}"
+                    HeightRequest="50"
+                    Orientation="Vertical">
+                    <Label Text=""/>
+                </StackLayout>
+
+            </pancake:PancakeView>
+
+            </CollectionView.Header>
+
+            
+            <CollectionView.Footer>
                 <StackLayout
                     BackgroundColor="White"
                     HeightRequest="50"
                     Orientation="Vertical">
                     <Label Text=""/>
                 </StackLayout>
-            </CollectionView.Header>
+            </CollectionView.Footer>
 
         </CollectionView>
 
