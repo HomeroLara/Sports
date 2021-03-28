@@ -53,7 +53,7 @@ namespace Sports.Core.ViewModels
         #endregion
 
         #region COMMANDS
-        public IAsyncCommand<Game> GameTappedCommand => new AsyncCommand<Game>(async(_) => await GameTapped(_), (_) => !IsBusy);
+        public IAsyncCommand<GameTeamDTO> GameTappedCommand => new AsyncCommand<GameTeamDTO>(async(_) => await GameTapped(_), (_) => !IsBusy);
         public IAsyncCommand<DateModel> DateTappedCommand => new AsyncCommand<DateModel>(async(_) => await DateTapped(_), (_) => !IsBusy);
         #endregion
 
@@ -110,7 +110,7 @@ namespace Sports.Core.ViewModels
             Dates = new ObservableCollection<DateModel>(dates);
         }
 
-        private async Task GameTapped(Game game)
+        private async Task GameTapped(GameTeamDTO game)
         {
             var g = game;
         }

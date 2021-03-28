@@ -4,11 +4,10 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:views="clr-namespace:Sports.Core.Views"
     xmlns:viewModels="clr-namespace:Sports.Core.ViewModels"
-    xmlns:controls="clr-namespace:Sports.Core.Controls"
+    x:DataType="viewModels:HomeViewModel"
     xmlns:templateSelectors="clr-namespace:Sports.Core.Views.TemplateSelectors"
-    xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
-	xmlns:ffsvgimageloading="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
-    viewModels:ViewModelLocator.AutoWireAndInitializeViewModel="True" 
+    viewModels:ViewModelLocator.AutoWireAndInitializeViewModel="True"
+    
 	BackgroundColor="{ DynamicResource PrimaryColor }"
     Shell.TabBarIsVisible="False"
     x:Class="Sports.Core.Views.HomeView">
@@ -21,44 +20,16 @@
     </ContentPage.Resources>
 
     <ContentPage.Content>
-
-        <Grid
-	        ColumnSpacing="0"
-	        RowSpacing="0"
-	        RowDefinitions="20*, 80*"
-	        HorizontalOptions="FillAndExpand"
-	        VerticalOptions="StartAndExpand">
-
-            <StackLayout
-				VerticalOptions="Center"
-				Grid.Row="0">
-				
-			</StackLayout>
-
-            <pancake:PancakeView
-	            x:Name="frameButtons"
-	            Grid.Row="1"
-	            Padding="0"
-	            HorizontalOptions="FillAndExpand"
-	            BackgroundColor="{StaticResource WhiteColor}"
-	            VerticalOptions="FillAndExpand"
-	            Style="{ StaticResource PancakeCard }">
-        
-                <CollectionView
-                    x:Name="collectionHomeMain"
-                    Margin="0,35,0,0"
-                    BackgroundColor="Transparent" 
-                    VerticalScrollBarVisibility="Never"
-                    VerticalOptions="FillAndExpand"
-                    HorizontalOptions="CenterAndExpand"
-                    SelectionChanged="collectionHomeMain_SelectionChanged"
-                    SelectionMode="Single"
-                    ItemsSource="{ Binding TemplateModels }"
-                    ItemTemplate="{ StaticResource homeTempateSelector }"/>
-
-            </pancake:PancakeView>
-
-        </Grid>
+        <CollectionView
+            x:Name="collectionHomeMain"
+            BackgroundColor="Transparent" 
+            VerticalScrollBarVisibility="Never"
+            VerticalOptions="FillAndExpand"
+            HorizontalOptions="CenterAndExpand"
+            SelectionChanged="collectionHomeMain_SelectionChanged"
+            SelectionMode="Single"           
+            ItemsSource="{ Binding TemplateModels }"
+            ItemTemplate="{ StaticResource homeTempateSelector }"/>
 
     </ContentPage.Content>
 </views:BaseView>

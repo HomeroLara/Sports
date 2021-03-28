@@ -7,6 +7,7 @@
     xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     x:Class="Sports.Core.Views.Templates.NBAScheduleTemplate"
+    BackgroundColor="{StaticResource WhiteColor}"
     x:Name="view">
 
     <ContentView.Content>
@@ -20,10 +21,10 @@
                 
             <Grid
                 RowDefinitions="*"
-                Margin="10,0,0,5"
+                Margin="0,0,0,5"
                 ColumnDefinitions="*"
 	            Grid.Row="0">
-                <controls:DateControl 
+                <controls:DateControl
                     x:Name="calendarView"
                     Grid.Column="0"
                     Grid.Row="0"

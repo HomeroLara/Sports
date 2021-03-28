@@ -28,7 +28,7 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Frame
-                        Padding="5,2,5,2"
+                        Padding="0,2,5,2"
                         BackgroundColor="{ Binding BackgroundColor }"
                         CornerRadius="10"
                         HasShadow="False"
@@ -57,6 +57,7 @@
                                 HorizontalTextAlignment="Center"
                                 Text="{Binding Day}"
                                 TextColor="{Binding TextColor}" />
+
                             <Label
                                 Grid.Row="2"
                                 Grid.Column="0"
